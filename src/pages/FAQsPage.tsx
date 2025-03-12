@@ -64,9 +64,14 @@ const FAQsPage = () => {
     <>
       <section className="bg-gray-50 py-24 min-h-screen">
         <div className="max-w-5xl mx-auto px-6">
-          <h1 className="text-5xl font-bold text-gray-800 text-center mb-12">
+          <h1 className="text-5xl font-bold text-gray-800 text-center mb-8">
             Frequently Asked Questions
           </h1>
+          <p className="text-gray-600 leading-relaxed mb-16 w-4xl mx-auto text-center">
+            Our responses reflect our commitment to transparency, Islamic
+            ethics, and personalized service, ensuring you have the confidence
+            and clarity needed to achieve your real estate goals with ease.
+          </p>
           <Accordion
             type="single"
             collapsible
@@ -85,7 +90,7 @@ const FAQsPage = () => {
                   </h3>
                 </AccordionTrigger>
                 <AccordionContent className="px-6 pb-6">
-                  <p className="text-gray-500 leading-relaxed text-lg">{faq.answer}</p>
+                  <p className="text-gray-500 leading-relaxed">{faq.answer}</p>
                 </AccordionContent>
               </AccordionItem>
             ))}
