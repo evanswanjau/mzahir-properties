@@ -18,7 +18,7 @@ export const BlogCard = ({ post }: { post: BlogPost }) => {
         <h3 className="text-xl font-semibold text-gray-800 mb-2">
           {post.title}
         </h3>
-        <p className="text-gray-500 mb-4 text-lg">{post.excerpt}</p>
+        <p className="text-gray-500 mb-4">{post.excerpt}</p>
         <div className="flex justify-end items-center text-gray-500">
           <span>{post.datePosted}</span>
         </div>

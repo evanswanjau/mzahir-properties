@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { BlogCard } from "@/components/BlogCard";
+import { CallToAction } from "@/components/sections/CallToAction";
 
 interface BlogPost {
   id: number;
@@ -171,59 +172,63 @@ const BlogPage = () => {
   const handlePageChange = (page: number) => {
     if (page >= 1 && page <= totalPages) {
       setCurrentPage(page);
+      window.scrollTo({ top: 0 });
     }
   };
 
   return (
-    <section className="py-16 bg-gray-50 min-h-screen">
-      <div className="max-w-4xl mx-auto text-center mb-12 px-4">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">Our Blog</h1>
-        <p className="text-gray-500">
-          Stay updated with the latest real estate insights, tips, and trends
-          from Mzahir. Explore our articles to make informed decisions about
-          buying, selling, and living in Nairobi’s best properties.
-        </p>
-      </div>
+    <>
+      <section className="pt-16 pb-32 bg-gray-50 min-h-screen">
+        <div className="max-w-4xl mx-auto text-center mb-12 px-4">
+          <h1 className="text-4xl font-bold text-gray-800 mb-4">Our Blog</h1>
+          <p className="text-gray-500">
+            Stay updated with the latest real estate insights, tips, and trends
+            from Mzahir. Explore our articles to make informed decisions about
+            buying, selling, and living in Nairobi’s best properties.
+          </p>
+        </div>
 
-      <div className="max-w-[80%] mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {currentPosts.map((post) => (
-          <BlogCard key={post.id} post={post} />
-        ))}
-      </div>
+        <div className="max-w-[80%] mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {currentPosts.map((post) => (
+            <BlogCard key={post.id} post={post} />
+          ))}
+        </div>
 
-      <div className="flex justify-center items-center mt-12 space-x-2">
-        <Button
-          variant="outline"
-          onClick={() => handlePageChange(currentPage - 1)}
-          disabled={currentPage === 1}
-          className="border-green-700 text-green-700 hover:bg-green-700 hover:text-white"
-        >
-          Previous
-        </Button>
-        {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+        <div className="flex justify-center items-center mt-20 space-x-2">
           <Button
-            key={page}
-            variant={currentPage === page ? "default" : "outline"}
-            onClick={() => handlePageChange(page)}
-            className={
-              currentPage === page
-                ? "bg-green-700 text-white hover:bg-green-800"
-                : "border-green-700 text-green-700 hover:bg-green-700 hover:text-white"
-            }
+            variant="outline"
+            onClick={() => handlePageChange(currentPage - 1)}
+            disabled={currentPage === 1}
+            className="border-green-700 text-green-700 hover:bg-green-700 hover:text-white"
           >
-            {page}
+            Previous
           </Button>
-        ))}
-        <Button
-          variant="outline"
-          onClick={() => handlePageChange(currentPage + 1)}
-          disabled={currentPage === totalPages}
-          className="border-green-700 text-green-700 hover:bg-green-700 hover:text-white"
-        >
-          Next
-        </Button>
-      </div>
-    </section>
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+            <Button
+              key={page}
+              variant={currentPage === page ? "default" : "outline"}
+              onClick={() => handlePageChange(page)}
+              className={
+                currentPage === page
+                  ? "bg-green-700 text-white hover:bg-green-800"
+                  : "border-green-700 text-green-700 hover:bg-green-700 hover:text-white"
+              }
+            >
+              {page}
+            </Button>
+          ))}
+          <Button
+            variant="outline"
+            onClick={() => handlePageChange(currentPage + 1)}
+            disabled={currentPage === totalPages}
+            className="border-green-700 text-green-700 hover:bg-green-700 hover:text-white"
+          >
+            Next
+          </Button>
+        </div>
+      </section>
+      <CallToAction />
+    </>
   );
 };
 
