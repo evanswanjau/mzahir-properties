@@ -1,5 +1,5 @@
 import Hero from "@/components/Hero";
-import FeaturedProperties from "@/components/FeaturedProperties";
+import FeaturedProperties from "@/components/sections/FeaturedProperties";
 import FeaturedBlogs from "@/components/sections/FeaturedBlogs";
 
 const HomePage = () => {
