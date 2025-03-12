@@ -20,7 +20,7 @@ export const CallToAction = () => {
           estate expert.
         </p>
         <a href="/contact-us">
-          <Button className="bg-green-700 text-white hover:bg-green-800 px-8 py-7 text-lg cursor-pointer">
+          <Button className="bg-green-700 text-white hover:bg-green-800 px-8 py-7 cursor-pointer">
             Get Started Today
           </Button>
         </a>

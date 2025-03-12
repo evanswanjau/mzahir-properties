@@ -72,17 +72,17 @@ const SellPropertyPage = () => {
   return (
     <section className="bg-gray-50 min-h-screen">
       <div className="h-[calc(100vh-84px)] flex bg-white">
-        <div className="w-full md:w-1/2 flex flex-col align-center justify-center px-24">
-          <h1 className="text-6xl md:text-[5em] font-bold text-gray-800 mb-6 leading-22 tracking-wide">
+        <div className="w-full md:w-1/2 flex flex-col align-center justify-center px-34">
+          <h1 className="text-4xl md:text-[5em] font-bold text-gray-800 mb-6 leading-21 tracking-wide">
             Sell Your Property with M.Zahir Properties
           </h1>
-          <p className="text-xl text-gray-600 mb-8">
-            Leverage our 15 years of expertise and ethical practices to sell
-            your property quickly and at the best price. Let us handle the
-            details while you focus on your next move.
+          <p className="text-gray-600 mb-8">
+            Leverage our years of expertise and ethical practices to sell your
+            property quickly and at the best price. Let us handle the details
+            while you focus on your next move.
           </p>
           <a href="#valuation-form">
-            <Button className="bg-green-700 border-green-700 cursor-pointer hover:bg-green-900 hover:border-green-900 text-white font-body text-lg px-8 py-7 rounded-lg transition-all duration-500">
+            <Button className="bg-green-700 border-green-700 cursor-pointer hover:bg-green-900 hover:border-green-900 text-white font-body px-8 py-7 rounded-lg transition-all duration-500">
               Get a Free Valuation
             </Button>
           </a>
@@ -129,7 +129,7 @@ const SellPropertyPage = () => {
               <a href="#valuation-form">
                 <Button
                   variant="default"
-                  className="bg-green-700 border border-green-700 cursor-pointer hover:bg-white hover:border-white text-white hover:text-green-700 font-body text-lg px-8 py-7 rounded-lg transition-all duration-500"
+                  className="bg-green-700 border border-green-700 cursor-pointer hover:bg-white hover:border-white text-white hover:text-green-700 font-body px-8 py-7 rounded-lg transition-all duration-500"
                 >
                   Sell Your Property Today
                 </Button>
@@ -137,7 +137,7 @@ const SellPropertyPage = () => {
               <a href="/contact-us">
                 <Button
                   variant="outline"
-                  className="border-white bg-green-900 cursor-pointer text-white hover:bg-white hover:text-green-700 text-lg px-8 py-7 rounded-lg transition-all duration-500"
+                  className="border-white bg-green-900 cursor-pointer text-white hover:bg-white hover:text-green-700 px-8 py-7 rounded-lg transition-all duration-500"
                 >
                   Get in touch
                 </Button>
@@ -150,6 +150,11 @@ const SellPropertyPage = () => {
           <h2 className="text-4xl font-bold text-gray-800 text-center mb-12">
             Why Choose M. Zahir Properties?
           </h2>
+          <p className="text-gray-600 mb-18 w-4xl mx-auto text-center">
+            Discover the key reasons why clients choose us—from personalized
+            support to comprehensive selling solutions—all designed to make your
+            experience seamless and rewarding.
+          </p>
 
           <div className="space-y-32 w-[80%] mx-auto px-24">
             <div className="flex flex-col md:flex-row items-center gap-16">
@@ -391,7 +396,7 @@ const SellPropertyPage = () => {
             </div>
             <Button
               type="submit"
-              className="bg-green-700 cursor-pointer text-white hover:bg-green-800 w-full py-6 text-lg transition-all duration-300"
+              className="bg-green-700 cursor-pointer text-white hover:bg-green-800 w-full py-6 transition-all duration-300"
             >
               Submit Request
             </Button>
