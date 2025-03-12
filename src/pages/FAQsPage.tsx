@@ -68,9 +68,9 @@ const FAQsPage = () => {
             Frequently Asked Questions
           </h1>
           <p className="text-gray-600 leading-relaxed mb-16 w-4xl mx-auto text-center">
-            Our responses reflect our commitment to transparency, Islamic
-            ethics, and personalized service, ensuring you have the confidence
-            and clarity needed to achieve your real estate goals with ease.
+            Navigating the real estate market can raise many questions, and at
+            M. Zahir Properties, we’re here to provide clear, detailed answers
+            to help you make informed decisions.
           </p>
           <Accordion
             type="single"
