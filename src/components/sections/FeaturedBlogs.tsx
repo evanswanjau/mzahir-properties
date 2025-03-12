@@ -74,9 +74,9 @@ export const FeaturedBlogs = () => {
     <section className="bg-gray-100 py-24">
       <div className="max-w-[80%] mx-auto px-6">
         <h2 className="text-4xl font-bold text-gray-800 text-center mb-5">
-          Insights & Inspiration
+          Featured Blogs
         </h2>
-        <p className="w-4xl mx-auto text-gray-500 text-lg leading-relaxed text-center">
+        <p className="w-4xl mx-auto text-gray-500 leading-relaxed text-center">
           Explore expert advice, real estate trends, and practical tips to guide
           you through buying, selling, and investing in Nairobi’s dynamic
           property market.
