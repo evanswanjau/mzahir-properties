@@ -96,10 +96,10 @@ const SellPropertyPage = () => {
       <div className="mx-auto">
         <div className="bg-green-900 text-white py-38 flex justify-center">
           <div className="max-w-[80%]">
-            <h2 className="text-4xl font-bold text-gray-100 text-center mb-8">
+            <h2 className="text-4xl font-bold text-white text-center mb-8">
               Our Simple Selling Process
             </h2>
-            <p className="text-gray-200 w-4xl mx-auto text-center mb-20">
+            <p className="text-white w-4xl mx-auto text-center mb-20">
               At M. Zahir Properties, we’ve streamlined the property selling
               process to make it as seamless and stress-free as possible. With
               over 15 years of experience and a commitment to Islamic ethics, we
