@@ -12,11 +12,7 @@ import {
   MapPin,
 } from "lucide-react";
 
-import {
-  Card,
-  CardHeader,
-  CardContent,
-} from "@/components/ui/card";
+import { Card, CardHeader, CardContent } from "@/components/ui/card";
 
 const ContactUs = () => {
   const handleSubmit = (e: React.FormEvent) => {
@@ -36,46 +32,52 @@ const ContactUs = () => {
               Get in Touch
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              <Card className="rounded-lg shadow-none border-none p-5 bg-green-50 transition-shadow">
+              <Card className="rounded-2xl shadow-none border-none p-5 bg-gray-900">
                 <CardHeader className="flex  space-x-4 p-4">
-                  <Phone className="w-8 h-8 text-green-700" />
+                  <Phone className="w-8 h-8 text-green-600" />
                 </CardHeader>
                 <CardContent className="p-4">
-                  <h3 className="text-gray-800 text-xl font-bold">Call Us</h3>
-                  <p className="text-gray-600 mt-6 mb-1">
+                  <h3 className="text-white text-xl font-bold">Call Us</h3>
+                  <p className="text-gray-300 mt-6 mb-1">
                     Mon-Fri from 8am to 5pm
                   </p>
-                  <p className="text-gray-800 font-bold underline">
+                  <a
+                    href="te:+254 712 345 678"
+                    className="text-green-600 font-bold underline"
+                  >
                     +254 712 345 678
-                  </p>
+                  </a>
                 </CardContent>
               </Card>
 
-              <Card className="rounded-lg shadow-none border-none p-5 bg-green-50 transition-shadow">
+              <Card className="rounded-2xl shadow-none border-none p-5 bg-gray-900">
                 <CardHeader className="flex  space-x-4 p-4">
-                  <Mail className="w-8 h-8 text-green-700" />
+                  <Mail className="w-8 h-8 text-green-600" />
                 </CardHeader>
                 <CardContent className="p-4">
-                  <h3 className="text-gray-800 text-xl font-bold">
+                  <h3 className="text-white text-xl font-bold">
                     Send us An Email
                   </h3>
-                  <p className="text-gray-600 mt-6 mb-1">
+                  <p className="text-gray-300 mt-6 mb-1">
                     Reach out to our team
                   </p>
-                  <p className="text-gray-800 font-bold underline">
+                  <a
+                    href="mailto:info@mzahirproperties.com"
+                    className="text-green-600 font-bold underline"
+                  >
                     info@mzahirproperties.com
-                  </p>
+                  </a>
                 </CardContent>
               </Card>
 
-              <Card className="rounded-lg shadow-none border-none p-5 bg-green-50 transition-shadow">
+              <Card className="rounded-2xl shadow-none border-none p-5 bg-gray-900">
                 <CardHeader className="flex  space-x-4 p-4">
-                  <MapPin className="w-8 h-8 text-green-700" />
+                  <MapPin className="w-8 h-8 text-green-600" />
                 </CardHeader>
                 <CardContent className="p-4">
-                  <h3 className="text-gray-800 text-xl font-bold">Visit Us</h3>
-                  <p className="text-gray-600 mt-6">Visit our office HQ</p>
-                  <p className="text-gray-800 font-bold underline">
+                  <h3 className="text-white text-xl font-bold">Visit Us</h3>
+                  <p className="text-gray-300 mt-6 mb-1">Visit our office HQ</p>
+                  <p className="text-green-600 font-bold underline">
                     <a
                       href="https://www.google.com/maps/search/?api=1&query=123+Karen+Road,+Nairobi,+Kenya"
                       target="_blank"
@@ -87,90 +89,114 @@ const ContactUs = () => {
                 </CardContent>
               </Card>
 
-              <Card className="rounded-lg shadow-none border-none p-5 bg-green-50 transition-shadow">
+              <Card className="rounded-2xl shadow-none border-none p-5 bg-gray-900">
                 <CardHeader className="flex  space-x-4 p-4">
-                  <Phone className="w-8 h-8 text-green-700" />
+                  <Phone className="w-8 h-8 text-green-600" />
                 </CardHeader>
                 <CardContent className="p-4">
-                  <h3 className="text-gray-800 text-xl font-bold">
+                  <h3 className="text-white text-xl font-bold">
                     Postal Address
                   </h3>
-                  <p className="text-gray-600 mt-6">Send us mail</p>
-                  <p className="text-gray-800 font-bold underline">
+                  <p className="text-gray-300 mt-6 mb-1">Send us mail</p>
+                  <p className="text-green-600 font-bold">
                     P.O. Box 45678-00100
                   </p>
                 </CardContent>
               </Card>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 py-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 py-24">
             <div>
               <h2 className="text-3xl font-semibold text-gray-800 mb-6">
                 Send Us an Enquiry
               </h2>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <Label htmlFor="name" className="text-gray-700">
-                    Name
-                  </Label>
-                  <Input
-                    id="name"
-                    type="text"
-                    placeholder="Your Name"
-                    className="mt-2 rounded-lg border-gray-300 py-6 px-4"
-                    required
-                  />
+              <form onSubmit={handleSubmit} className="mx-auto space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <Label
+                      htmlFor="first-name"
+                      className="text-gray-700 font-bold"
+                    >
+                      First Name
+                    </Label>
+                    <Input
+                      id="first-name"
+                      type="text"
+                      placeholder="Your First Name"
+                      className="mt-2 rounded-lg bg-white py-6 px-4 focus-visible:ring-0 border-2 border-gray-200 shadow-none focus-visible:border-green-600"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <Label
+                      htmlFor="last-name"
+                      className="text-gray-700 font-bold"
+                    >
+                      Last Name
+                    </Label>
+                    <Input
+                      id="last-name"
+                      type="text"
+                      placeholder="Your Last Name"
+                      className="mt-2 rounded-lg bg-white py-6 px-4 focus-visible:ring-0 border-2 border-gray-200 shadow-none focus-visible:border-green-600"
+                      required
+                    />
+                  </div>
                 </div>
+
                 <div>
-                  <Label htmlFor="email" className="text-gray-700">
+                  <Label htmlFor="email" className="text-gray-700 font-bold">
                     Email
                   </Label>
                   <Input
                     id="email"
                     type="email"
                     placeholder="Your Email"
-                    className="mt-2 rounded-lg border-gray-300 py-6 px-4"
+                    className="mt-2 rounded-lg bg-white py-6 px-4 focus-visible:ring-0 border-2 border-gray-200 shadow-none focus-visible:border-green-600"
                     required
                   />
                 </div>
                 <div>
-                  <Label htmlFor="phone" className="text-gray-700">
+                  <Label htmlFor="phone" className="text-gray-700 font-bold">
                     Phone Number
                   </Label>
                   <Input
                     id="phone"
                     type="tel"
                     placeholder="Your Phone Number"
-                    className="mt-2 rounded-lg border-gray-300 py-6 px-4"
+                    className="mt-2 rounded-lg bg-white py-6 px-4 focus-visible:ring-0 border-2 border-gray-200 shadow-none focus-visible:border-green-600"
+                    required
                   />
                 </div>
                 <div>
-                  <Label htmlFor="phone" className="text-gray-700">
+                  <Label htmlFor="subject" className="text-gray-700 font-bold">
                     Subject
                   </Label>
                   <Input
-                    id="phone"
-                    type="text"
-                    placeholder="Your Subject"
-                    className="mt-2 rounded-lg border-gray-300 py-6 px-4"
+                    id="subject"
+                    type="tel"
+                    placeholder="Subject"
+                    className="mt-2 rounded-lg bg-white py-6 px-4 focus-visible:ring-0 border-2 border-gray-200 shadow-none focus-visible:border-green-600"
+                    required
                   />
                 </div>
                 <div>
-                  <Label htmlFor="message" className="text-gray-700">
+                  <Label htmlFor="property-address" className="text-gray-700">
                     Message
                   </Label>
                   <Textarea
                     id="message"
-                    placeholder="Your Message"
-                    className="mt-2 rounded-lg border-gray-300 h-32 py-6 px-4"
+                    placeholder="Start writing your message"
+                    className="mt-2 rounded-lg h-24 bg-white py-4 px-4 focus-visible:ring-0 border-2 border-gray-200 shadow-none focus-visible:border-green-600"
                     required
+                    rows={8}
                   />
                 </div>
                 <Button
                   type="submit"
-                  className="bg-green-700 text-white hover:bg-green-800 px-6 py-6 w-full cursor-pointer"
+                  className="bg-green-700 cursor-pointer text-white hover:bg-green-800 w-full py-6  transition-all duration-300"
                 >
-                  Submit Enquiry
+                  Send Message
                 </Button>
               </form>
             </div>
@@ -197,6 +223,14 @@ const ContactUs = () => {
                 </h2>
                 <div className="flex space-x-6">
                   <a
+                    href="https://facebook.com/mzahirproperties"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-green-700 hover:text-green-800"
+                  >
+                    <Facebook className="w-6 h-6" />
+                  </a>
+                  <a
                     href="https://instagram.com/mzahirproperties"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -211,14 +245,6 @@ const ContactUs = () => {
                     className="text-green-700 hover:text-green-800"
                   >
                     <Twitter className="w-6 h-6" />
-                  </a>
-                  <a
-                    href="https://facebook.com/mzahirproperties"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-green-700 hover:text-green-800"
-                  >
-                    <Facebook className="w-6 h-6" />
                   </a>
                 </div>
               </div>
