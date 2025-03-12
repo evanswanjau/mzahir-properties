@@ -49,7 +49,7 @@ const Hero = () => {
   const leftColumnHeight = useRef(0);
   const rightColumnHeight = useRef(0);
   const animationRef = useRef<number | null>(null);
-  const speedFactor = 0.03;
+  const speedFactor = 0.05;
 
   const updateScrollPosition = useCallback(() => {
     setScrollY1((prev) => {
