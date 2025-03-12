@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 // @ts-ignore
 import "swiper/css";
-
+import { CallToAction } from "@/components/sections/CallToAction";
 
 const AboutUs = () => {
   const testimonials = [
@@ -154,29 +154,8 @@ const AboutUs = () => {
       </section>
 
       <FeaturedFAQs />
-      
       <FeaturedBlogs />
-      {/* Call to Action Section */}
-      <section className="bg-gray-50 py-24">
-        <div className="max-w-5xl mx-auto text-center px-6">
-          <h2 className="text-4xl font-bold text-gray-800 mb-6">
-            Turn Your Real Estate Dreams Into Reality
-          </h2>
-          <p className="text-gray-600 leading-relaxed mb-8">
-            From finding your perfect home to selling your property with ease,
-            we’re here to assist you every step of the way. Contact us today to
-            begin your journey with M. Zahir Properties.
-          </p>
-          <a href="/contact-us">
-            <Button
-              variant="default"
-              className="bg-green-700 text-white hover:bg-green-800 px-8 py-4 text-xl font-semibold"
-            >
-              Contact Us Now
-            </Button>
-          </a>
-        </div>
-      </section>
+      <CallToAction />
     </>
   );
 };

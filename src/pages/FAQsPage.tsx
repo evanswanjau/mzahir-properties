@@ -1,3 +1,4 @@
+import { CallToAction } from "@/components/sections/CallToAction";
 import FeaturedBlogs from "@/components/sections/FeaturedBlogs";
 import {
   Accordion,
@@ -98,6 +99,7 @@ const FAQsPage = () => {
         </div>
       </section>
       <FeaturedBlogs />
+      <CallToAction />
     </>
   );
 };

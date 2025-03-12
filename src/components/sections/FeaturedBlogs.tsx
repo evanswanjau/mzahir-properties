@@ -93,7 +93,7 @@ export const FeaturedBlogs = () => {
           }}
         >
           {blogPosts.map((blog) => (
-            <SwiperSlide key={blog.id} className="my-24">
+            <SwiperSlide key={blog.id} className="my-20">
               <BlogCard post={blog} />
             </SwiperSlide>
           ))}
