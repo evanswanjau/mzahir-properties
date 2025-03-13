@@ -6,6 +6,7 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/accordion";
+import { motion } from "framer-motion";
 
 const FAQsPage = () => {
   const faqs = [
@@ -61,41 +62,83 @@ const FAQsPage = () => {
     },
   ];
 
+  const fadeInUp = {
+    initial: { opacity: 0, y: 50 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true, amount: 0.3 },
+    transition: { duration: 0.6, ease: "easeOut" },
+  };
+
   return (
     <>
-      <section className="bg-gray-50 py-24 min-h-screen">
-        <div className="max-w-5xl mx-auto px-6">
-          <h1 className="text-5xl font-bold text-gray-800 text-center mb-8">
-            Frequently Asked Questions
-          </h1>
-          <p className="text-gray-600 leading-relaxed mb-16 w-4xl mx-auto text-center">
-            Navigating the real estate market can raise many questions, and at
-            M. Zahir Properties, we’re here to provide clear, detailed answers
-            to help you make informed decisions.
-          </p>
-          <Accordion
-            type="single"
-            collapsible
-            defaultValue="item-0"
-            className="space-y-4"
-          >
-            {faqs.map((faq, index) => (
-              <AccordionItem
-                key={faq.question}
-                value={`item-${index}`}
-                className="bg-white rounded-lg"
+      <section className="min-h-screen">
+        <div
+          style={{
+            backgroundImage: "url(" + "/images/white-background.png" + ")",
+            backgroundPosition: "center center",
+            backgroundSize: "90%",
+            backgroundRepeat: "no-repeat",
+          }}
+          className="w-[80%] mx-auto"
+        >
+          <motion.div {...fadeInUp} className="mb-12 py-12 bg-white/80">
+            <div className="w-4xl mx-auto text-center bg-white/90">
+              <motion.h1
+                {...fadeInUp}
+                className="text-6xl font-bold text-gray-800 text-center mb-8 leading-18"
               >
-                <AccordionTrigger className="flex justify-between items-center p-6 text-left hover:no-underline">
-                  <h3 className="text-xl font-semibold text-gray-800">
-                    {faq.question}
-                  </h3>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-6">
-                  <p className="text-gray-500 leading-relaxed">{faq.answer}</p>
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+                Find answers to your{" "}
+                <span className="text-green-700">
+                  Frequently Asked Questions
+                </span>{" "}
+                here.
+              </motion.h1>
+            </div>
+          </motion.div>
+        </div>
+        <div className="bg-gradient-to-b from-white to-gray-100 pb-24">
+          <div className="max-w-5xl mx-auto px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="space-y-4"
+            >
+              <Accordion
+                type="single"
+                collapsible
+                defaultValue="item-0"
+                className="space-y-4"
+              >
+                {faqs.map((faq, index) => (
+                  <motion.div
+                    key={faq.question}
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                  >
+                    <AccordionItem
+                      value={`item-${index}`}
+                      className="bg-white rounded-lg"
+                    >
+                      <AccordionTrigger className="flex justify-between items-center p-6 text-left hover:no-underline">
+                        <h3 className="text-xl font-semibold text-gray-800">
+                          {faq.question}
+                        </h3>
+                      </AccordionTrigger>
+                      <AccordionContent className="px-6 pb-6">
+                        <p className="text-gray-500 leading-relaxed">
+                          {faq.answer}
+                        </p>
+                      </AccordionContent>
+                    </AccordionItem>
+                  </motion.div>
+                ))}
+              </Accordion>
+            </motion.div>
+          </div>
         </div>
       </section>
       <FeaturedBlogs />

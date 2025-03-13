@@ -3,6 +3,7 @@ import { BlogCard } from "@/components/BlogCard";
 import { Autoplay } from "swiper/modules";
 // @ts-ignore
 import "swiper/css";
+import { motion } from "framer-motion";
 
 interface BlogPost {
   id: number;
@@ -12,6 +13,7 @@ interface BlogPost {
   datePosted: string;
   image: string;
 }
+
 export const FeaturedBlogs = () => {
   const blogPosts: BlogPost[] = [
     {
@@ -73,31 +75,59 @@ export const FeaturedBlogs = () => {
   return (
     <section className="bg-gray-100 py-24">
       <div className="max-w-[80%] mx-auto px-6">
-        <h2 className="text-4xl font-bold text-gray-800 text-center mb-5">
-          Featured Blogs
-        </h2>
-        <p className="w-4xl mx-auto text-gray-500 leading-relaxed text-center">
-          Explore expert advice, real estate trends, and practical tips to guide
-          you through buying, selling, and investing in Nairobi’s dynamic
-          property market.
-        </p>
-        <Swiper
-          modules={[Autoplay]}
-          spaceBetween={24}
-          slidesPerView={4}
-          slidesPerGroup={1}
-          loop={true}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-          }}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="text-center mb-5"
         >
-          {blogPosts.map((blog) => (
-            <SwiperSlide key={blog.id} className="my-20">
-              <BlogCard post={blog} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+          <h2 className="text-4xl font-bold text-gray-800">Featured Blogs</h2>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="w-4xl mx-auto text-gray-500 leading-relaxed text-center"
+        >
+          <p>
+            Explore expert advice, real estate trends, and practical tips to
+            guide you through buying, selling, and investing in Nairobi’s
+            dynamic property market.
+          </p>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <Swiper
+            modules={[Autoplay]}
+            spaceBetween={24}
+            slidesPerView={4}
+            slidesPerGroup={1}
+            loop={true}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+          >
+            {blogPosts.map((blog) => (
+              <SwiperSlide key={blog.id} className="my-20">
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                >
+                  <BlogCard post={blog} />
+                </motion.div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </motion.div>
       </div>
     </section>
   );
