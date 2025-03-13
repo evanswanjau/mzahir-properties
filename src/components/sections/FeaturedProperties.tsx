@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import PropertyListing from "@/components/PropertyListings";
+import { motion } from "framer-motion";
 
 interface Property {
   title: string;
@@ -96,36 +97,65 @@ const FeaturedProperties = () => {
 
   return (
     <section className="py-16 bg-gray-50">
-      <h2 className="text-4xl text-gray-800 font-bold text-center mb-8">
-        Featured Property Listings
-      </h2>
-      <p className="text-center text-gray-600 mb-8 w-6/12 mx-auto">
-        Explore our handpicked selection of premium properties in Nairobi.
-        Whether you're looking for a modern apartment, a spacious villa, or a
-        cozy home, we have something for everyone. Browse through our listings
-        and find your dream property today.
-      </p>
-      <div
-        className="relative max-w-[80%] mx-auto px-4 overflow-hidden"
-        onMouseEnter={() => setIsScrolling(false)}
-        onMouseLeave={() => setIsScrolling(true)}
-      >
-        <div
-          ref={scrollRef}
-          className="flex gap-6 overflow-x-auto scroll-smooth hide-scrollbar py-12"
-          style={{ scrollBehavior: "auto" }}
+      <div className="max-w-[80%] mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="text-center mb-8"
         >
-          {doubledProperties.map((property, index) => (
-            <PropertyListing
-              key={index}
-              property={property}
-              index={index % properties.length}
-              onPrevImage={handlePrevImage}
-              onNextImage={handleNextImage}
-              currentImageIndex={imageIndices[index % properties.length]}
-            />
-          ))}
-        </div>
+          <h2 className="text-4xl text-gray-800 font-bold">
+            Featured Property Listings
+          </h2>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="text-center text-gray-600 mb-8 w-6/12 mx-auto"
+        >
+          <p>
+            Explore our handpicked selection of premium properties in Nairobi.
+            Whether you're looking for a modern apartment, a spacious villa, or
+            a cozy home, we have something for everyone. Browse through our
+            listings and find your dream property today.
+          </p>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="relative overflow-hidden"
+        >
+          <div
+            ref={scrollRef}
+            className="flex gap-6 overflow-x-auto scroll-smooth hide-scrollbar py-12"
+            style={{ scrollBehavior: "auto" }}
+            onMouseEnter={() => setIsScrolling(false)}
+            onMouseLeave={() => setIsScrolling(true)}
+          >
+            {doubledProperties.map((property, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+              >
+                <PropertyListing
+                  property={property}
+                  index={index % properties.length}
+                  onPrevImage={handlePrevImage}
+                  onNextImage={handleNextImage}
+                  currentImageIndex={imageIndices[index % properties.length]}
+                />
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

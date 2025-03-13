@@ -45,8 +45,8 @@ const ContactUs = () => {
                   {...fadeInUp}
                   className="text-6xl font-bold text-gray-800 text-center mb-8 leading-18"
                 >
-                  Get in touch with us today to start your{" "}
-                  <span className="text-green-700">Real Estate</span> journey.
+                  <span className="text-green-700">Get in Touch</span> with us today to start your{" "}
+                  real estate journey.
                 </motion.h1>
               </div>
             </motion.div>

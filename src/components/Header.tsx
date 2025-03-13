@@ -5,7 +5,7 @@ const Header = () => {
     { name: "Home", href: "/" },
     { name: "Buy Property", href: "/buy-property" },
     { name: "Sell Property", href: "/sell-property" },
-    { name: "Our Services", href: "/our-services" },
+    { name: "Services", href: "/services" },
     { name: "About", href: "/about" },
     { name: "Blog", href: "/blog" },
     { name: "FAQs", href: "/faqs" },
@@ -41,7 +41,7 @@ const Header = () => {
                 variant="default"
                 className="cursor-pointer py-6 px-6 bg-green-700 text-white hover:bg-green-800 transition-colors duration-300"
               >
-                Get in touch
+                Get in Touch
               </Button>
             </a>
           </li>

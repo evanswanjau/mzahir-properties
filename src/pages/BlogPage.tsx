@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { BlogCard } from "@/components/BlogCard";
 import { CallToAction } from "@/components/sections/CallToAction";
+import { motion } from "framer-motion";
 
 interface BlogPost {
   id: number;
@@ -17,7 +18,7 @@ const blogPosts: BlogPost[] = [
     id: 1,
     title: "Top 5 Tips for First-Time Home Buyers",
     excerpt:
-      "Buying your first home can be overwhelming. Here are five essential tips to make the process smoother and more enjoyable.",
+      "Buying your first home can be overwhelming. Here are five essential tips to make the process smoother.",
     author: "Jane Mwangi",
     datePosted: "March 5, 2025",
     image: "/images/1.jpg",
@@ -176,55 +177,84 @@ const BlogPage = () => {
     }
   };
 
+  const fadeInUp = {
+    initial: { opacity: 0, y: 50 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true, amount: 0.3 },
+    transition: { duration: 0.6, ease: "easeOut" },
+  };
+
   return (
     <>
-      <section className="pt-24 pb-32 bg-gray-50 min-h-screen">
-        <div className="max-w-4xl mx-auto text-center mb-16 px-4">
-          <h1 className="text-5xl font-bold text-gray-800 mb-4">Our Blog</h1>
-          <p className="text-gray-500">
-            Stay updated with the latest real estate insights, tips, and trends
-            from Mzahir. Explore our articles to make informed decisions about
-            buying, selling, and living in Nairobi’s best properties.
-          </p>
+      <section className="mx-auto min-h-screen">
+        <div
+          style={{
+            backgroundImage: "url(" + "/images/white-background.png" + ")",
+            backgroundPosition: "center center",
+            backgroundSize: "90%",
+            backgroundRepeat: "no-repeat",
+          }}
+          className="max-w-[80%] mx-auto"
+        >
+          <motion.div {...fadeInUp} className="mb-12 py-12 bg-white/80">
+            <div className="w-4xl mx-auto text-center bg-white/90">
+              <motion.h1
+                {...fadeInUp}
+                className="text-6xl font-bold text-gray-800 text-center mb-8 leading-18"
+              >
+                Discover <span className="text-green-700">Our Blog</span> for{" "}
+                real estate insights.
+              </motion.h1>
+            </div>
+          </motion.div>
         </div>
 
-        <div className="max-w-[80%] mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {currentPosts.map((post) => (
-            <BlogCard key={post.id} post={post} />
-          ))}
-        </div>
-
-        <div className="flex justify-center items-center mt-20 space-x-2">
-          <Button
-            variant="outline"
-            onClick={() => handlePageChange(currentPage - 1)}
-            disabled={currentPage === 1}
-            className="border-green-700 text-green-700 hover:bg-green-700 hover:text-white"
+        <div className="bg-gradient-to-b from-white to-gray-100 pb-32">
+          <motion.div
+            {...fadeInUp}
+            className="max-w-[80%] mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
           >
-            Previous
-          </Button>
-          {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+            {currentPosts.map((post) => (
+              <motion.div key={post.id} {...fadeInUp}>
+                <BlogCard post={post} />
+              </motion.div>
+            ))}
+          </motion.div>
+          <motion.div
+            {...fadeInUp}
+            className="flex justify-center items-center mt-20 space-x-2"
+          >
             <Button
-              key={page}
-              variant={currentPage === page ? "default" : "outline"}
-              onClick={() => handlePageChange(page)}
-              className={
-                currentPage === page
-                  ? "bg-green-700 text-white hover:bg-green-800"
-                  : "border-green-700 text-green-700 hover:bg-green-700 hover:text-white"
-              }
+              variant="outline"
+              onClick={() => handlePageChange(currentPage - 1)}
+              disabled={currentPage === 1}
+              className="border-green-700 text-green-700 hover:bg-green-700 hover:text-white"
             >
-              {page}
+              Previous
             </Button>
-          ))}
-          <Button
-            variant="outline"
-            onClick={() => handlePageChange(currentPage + 1)}
-            disabled={currentPage === totalPages}
-            className="border-green-700 text-green-700 hover:bg-green-700 hover:text-white"
-          >
-            Next
-          </Button>
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <Button
+                key={page}
+                variant={currentPage === page ? "default" : "outline"}
+                onClick={() => handlePageChange(page)}
+                className={
+                  currentPage === page
+                    ? "bg-green-700 text-white hover:bg-green-800"
+                    : "border-green-700 text-green-700 hover:bg-green-700 hover:text-white"
+                }
+              >
+                {page}
+              </Button>
+            ))}
+            <Button
+              variant="outline"
+              onClick={() => handlePageChange(currentPage + 1)}
+              disabled={currentPage === totalPages}
+              className="border-green-700 text-green-700 hover:bg-green-700 hover:text-white"
+            >
+              Next
+            </Button>
+          </motion.div>
         </div>
       </section>
       <CallToAction />
