@@ -11,8 +11,8 @@ import {
   Mail,
   MapPin,
 } from "lucide-react";
-
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
 
 const ContactUs = () => {
   const handleSubmit = (e: React.FormEvent) => {
@@ -20,92 +20,111 @@ const ContactUs = () => {
     console.log("Form submitted");
   };
 
+  const fadeInUp = {
+    initial: { opacity: 0, y: 50 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true, amount: 0.3 },
+    transition: { duration: 0.6, ease: "easeOut" },
+  };
+
   return (
     <>
-      <section className="py-24 min-h-screen">
+      <section className="min-h-screen">
         <div className="max-w-[80%] mx-auto px-6">
-          <h1 className="text-5xl font-bold text-gray-800 text-center mb-12">
-            Contact Us
-          </h1>
-          <div>
-            <h2 className="text-3xl font-semibold text-gray-800 mb-6">
-              Get in Touch
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              <Card className="rounded-2xl shadow-none border-none p-5 bg-gray-900">
-                <CardHeader className="flex  space-x-4 p-4">
-                  <Phone className="w-8 h-8 text-green-600" />
-                </CardHeader>
-                <CardContent className="p-4">
-                  <h3 className="text-white text-xl font-bold">Call Us</h3>
-                  <p className="text-gray-300 mt-6 mb-1">
-                    Mon-Fri from 8am to 5pm
-                  </p>
-                  <a
-                    href="te:+254 712 345 678"
-                    className="text-green-600 font-bold underline"
-                  >
-                    +254 712 345 678
-                  </a>
-                </CardContent>
-              </Card>
-
-              <Card className="rounded-2xl shadow-none border-none p-5 bg-gray-900">
-                <CardHeader className="flex  space-x-4 p-4">
-                  <Mail className="w-8 h-8 text-green-600" />
-                </CardHeader>
-                <CardContent className="p-4">
-                  <h3 className="text-white text-xl font-bold">
-                    Send us An Email
-                  </h3>
-                  <p className="text-gray-300 mt-6 mb-1">
-                    Reach out to our team
-                  </p>
-                  <a
-                    href="mailto:info@mzahirproperties.com"
-                    className="text-green-600 font-bold underline"
-                  >
-                    info@mzahirproperties.com
-                  </a>
-                </CardContent>
-              </Card>
-
-              <Card className="rounded-2xl shadow-none border-none p-5 bg-gray-900">
-                <CardHeader className="flex  space-x-4 p-4">
-                  <MapPin className="w-8 h-8 text-green-600" />
-                </CardHeader>
-                <CardContent className="p-4">
-                  <h3 className="text-white text-xl font-bold">Visit Us</h3>
-                  <p className="text-gray-300 mt-6 mb-1">Visit our office HQ</p>
-                  <p className="text-green-600 font-bold underline">
-                    <a
-                      href="https://www.google.com/maps/search/?api=1&query=123+Karen+Road,+Nairobi,+Kenya"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      View on Google Maps
-                    </a>
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="rounded-2xl shadow-none border-none p-5 bg-gray-900">
-                <CardHeader className="flex  space-x-4 p-4">
-                  <Phone className="w-8 h-8 text-green-600" />
-                </CardHeader>
-                <CardContent className="p-4">
-                  <h3 className="text-white text-xl font-bold">
-                    Postal Address
-                  </h3>
-                  <p className="text-gray-300 mt-6 mb-1">Send us mail</p>
-                  <p className="text-green-600 font-bold">
-                    P.O. Box 45678-00100
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
+          <div
+            style={{
+              backgroundImage: "url(" + "/images/white-background.png" + ")",
+              backgroundPosition: "center center",
+              backgroundSize: "90%",
+              backgroundRepeat: "no-repeat",
+            }}
+          >
+            <motion.div {...fadeInUp} className="mb-12 py-12 bg-white/80">
+              <div className="w-4xl mx-auto text-center bg-white/90">
+                <motion.h1
+                  {...fadeInUp}
+                  className="text-6xl font-bold text-gray-800 text-center mb-8 leading-18"
+                >
+                  Get in touch with us today to start your{" "}
+                  <span className="text-green-700">Real Estate</span> journey.
+                </motion.h1>
+              </div>
+            </motion.div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 py-24">
+          <motion.div
+            {...fadeInUp}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          >
+            <Card className="rounded-2xl shadow-none border-none p-5 bg-gray-900">
+              <CardHeader className="flex space-x-4 p-4">
+                <Phone className="w-8 h-8 text-green-600" />
+              </CardHeader>
+              <CardContent className="p-4">
+                <h3 className="text-white text-xl font-bold">Call Us</h3>
+                <p className="text-gray-300 mt-6 mb-1">
+                  Mon-Fri from 8am to 5pm
+                </p>
+                <a
+                  href="tel:+254712345678"
+                  className="text-green-500 hover:text-green-400 transition-colors delay-300 font-bold underline"
+                >
+                  +254 712 345 678
+                </a>
+              </CardContent>
+            </Card>
+
+            <Card className="rounded-2xl shadow-none border-none p-5 bg-gray-900">
+              <CardHeader className="flex space-x-4 p-4">
+                <Mail className="w-8 h-8 text-green-600" />
+              </CardHeader>
+              <CardContent className="p-4">
+                <h3 className="text-white text-xl font-bold">
+                  Send us An Email
+                </h3>
+                <p className="text-gray-300 mt-6 mb-1">Reach out to our team</p>
+                <a
+                  href="mailto:info@mzahirproperties.com"
+                  className="text-green-500 hover:text-green-400 transition-colors delay-300 font-bold underline"
+                >
+                  info@mzahirproperties.com
+                </a>
+              </CardContent>
+            </Card>
+
+            <Card className="rounded-2xl shadow-none border-none p-5 bg-gray-900">
+              <CardHeader className="flex space-x-4 p-4">
+                <MapPin className="w-8 h-8 text-green-600" />
+              </CardHeader>
+              <CardContent className="p-4">
+                <h3 className="text-white text-xl font-bold">Visit Us</h3>
+                <p className="text-gray-300 mt-6 mb-1">Visit our office HQ</p>
+                <p className="text-green-500 hover:text-green-400 transition-colors delay-300 font-bold underline">
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=123+Karen+Road,+Nairobi,+Kenya"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View on Google Maps
+                  </a>
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="rounded-2xl shadow-none border-none p-5 bg-gray-900">
+              <CardHeader className="flex space-x-4 p-4">
+                <Phone className="w-8 h-8 text-green-600" />
+              </CardHeader>
+              <CardContent className="p-4">
+                <h3 className="text-white text-xl font-bold">Postal Address</h3>
+                <p className="text-gray-300 mt-6 mb-1">Send us mail</p>
+                <p className="text-green-500 font-bold">P.O. Box 45678-00100</p>
+              </CardContent>
+            </Card>
+          </motion.div>
+          <motion.div
+            {...fadeInUp}
+            className="grid grid-cols-1 md:grid-cols-2 gap-12 py-24"
+          >
             <div>
               <h2 className="text-3xl font-semibold text-gray-800 mb-6">
                 Send Us an Enquiry
@@ -143,7 +162,6 @@ const ContactUs = () => {
                     />
                   </div>
                 </div>
-
                 <div>
                   <Label htmlFor="email" className="text-gray-700 font-bold">
                     Email
@@ -181,7 +199,7 @@ const ContactUs = () => {
                   />
                 </div>
                 <div>
-                  <Label htmlFor="property-address" className="text-gray-700">
+                  <Label htmlFor="message" className="text-gray-700">
                     Message
                   </Label>
                   <Textarea
@@ -194,14 +212,13 @@ const ContactUs = () => {
                 </div>
                 <Button
                   type="submit"
-                  className="bg-green-700 cursor-pointer text-white hover:bg-green-800 w-full py-6  transition-all duration-300"
+                  className="bg-green-700 cursor-pointer text-white hover:bg-green-800 w-full py-6 transition-all duration-300"
                 >
                   Send Message
                 </Button>
               </form>
             </div>
-
-            <div className="space-y-12">
+            <motion.div {...fadeInUp} className="space-y-12">
               <div>
                 <h2 className="text-3xl font-semibold text-gray-800 mb-6">
                   Our Location
@@ -216,12 +233,11 @@ const ContactUs = () => {
                   referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
               </div>
-
               <div>
                 <h2 className="text-3xl font-semibold text-gray-800 mb-6">
                   Follow Us
                 </h2>
-                <div className="flex space-x-6">
+                <motion.div {...fadeInUp} className="flex space-x-6">
                   <a
                     href="https://facebook.com/mzahirproperties"
                     target="_blank"
@@ -246,10 +262,10 @@ const ContactUs = () => {
                   >
                     <Twitter className="w-6 h-6" />
                   </a>
-                </div>
+                </motion.div>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
