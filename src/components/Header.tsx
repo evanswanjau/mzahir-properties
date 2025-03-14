@@ -5,8 +5,8 @@ const Header = () => {
     { name: "Home", href: "/" },
     { name: "Buy Property", href: "/buy-property" },
     { name: "Sell Property", href: "/sell-property" },
-    { name: "Services", href: "/services" },
     { name: "About", href: "/about" },
+    { name: "Services", href: "/services" },
     { name: "Blog", href: "/blog" },
     { name: "FAQs", href: "/faqs" },
   ];
