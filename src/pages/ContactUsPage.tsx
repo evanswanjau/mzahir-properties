@@ -55,7 +55,7 @@ const ContactUs = () => {
             {...fadeInUp}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
           >
-            <Card className="rounded-2xl shadow-none border-none p-5 bg-gray-900">
+            <Card className="rounded-2xl shadow-none border-none p-5 bg-gray-800">
               <CardHeader className="flex space-x-4 p-4">
                 <Phone className="w-8 h-8 text-green-600" />
               </CardHeader>
@@ -73,7 +73,7 @@ const ContactUs = () => {
               </CardContent>
             </Card>
 
-            <Card className="rounded-2xl shadow-none border-none p-5 bg-gray-900">
+            <Card className="rounded-2xl shadow-none border-none p-5 bg-gray-800">
               <CardHeader className="flex space-x-4 p-4">
                 <Mail className="w-8 h-8 text-green-600" />
               </CardHeader>
@@ -91,7 +91,7 @@ const ContactUs = () => {
               </CardContent>
             </Card>
 
-            <Card className="rounded-2xl shadow-none border-none p-5 bg-gray-900">
+            <Card className="rounded-2xl shadow-none border-none p-5 bg-gray-800">
               <CardHeader className="flex space-x-4 p-4">
                 <MapPin className="w-8 h-8 text-green-600" />
               </CardHeader>
@@ -110,7 +110,7 @@ const ContactUs = () => {
               </CardContent>
             </Card>
 
-            <Card className="rounded-2xl shadow-none border-none p-5 bg-gray-900">
+            <Card className="rounded-2xl shadow-none border-none p-5 bg-gray-800">
               <CardHeader className="flex space-x-4 p-4">
                 <Phone className="w-8 h-8 text-green-600" />
               </CardHeader>
