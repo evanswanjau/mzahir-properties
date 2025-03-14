@@ -93,8 +93,8 @@ const SellPropertyPage = () => {
   };
 
   return (
-    <section className="bg-gray-50 min-h-screen">
-      <div className="h-[calc(100vh-84px)] flex bg-white">
+    <section className="min-h-screen">
+      <div className="h-[calc(100vh-84px)] flex">
         <div className="w-full md:w-1/2 flex flex-col align-center justify-center px-34">
           <motion.h1
             {...fadeInUpH1}
@@ -387,7 +387,7 @@ const SellPropertyPage = () => {
           </div>
         </motion.section>
 
-        <motion.div {...fadeInUp} className="pt-18 mb-42">
+        <motion.div {...fadeInUp} className="bg-gray-50 pt-18 pb-42">
           <h2 className="text-4xl font-bold text-gray-800 text-center mb-12">
             Request a Free Valuation
           </h2>
