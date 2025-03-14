@@ -93,8 +93,8 @@ const SellPropertyPage = () => {
   };
 
   return (
-    <section className="min-h-screen">
-      <div className="h-[calc(100vh-84px)] flex">
+    <section className="min-h-screen bg-gray-50">
+      <div className="h-[calc(100vh-84px)] flex bg-white">
         <div className="w-full md:w-1/2 flex flex-col align-center justify-center px-34">
           <motion.h1
             {...fadeInUpH1}
