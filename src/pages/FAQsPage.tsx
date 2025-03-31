@@ -76,7 +76,7 @@ const FAQsPage = () => {
           style={{
             backgroundImage: "url(" + "/images/white-background.png" + ")",
             backgroundPosition: "center center",
-            backgroundSize: "90%",
+            backgroundSize: "80%",
             backgroundRepeat: "no-repeat",
           }}
           className="w-[80%] mx-auto"
