@@ -120,155 +120,144 @@ const SellPropertyPage = () => {
         />
       </div>
       <div className="mx-auto">
-        <div
-          className="mx-auto"
-          style={{
-            backgroundImage: `url("/images/brick-wall.svg")`,
-            backgroundRepeat: "repeat",
-          }}
-        >
-          <div className=" pt-32 pb-42 bg-white/99">
-            <motion.h2
-              {...fadeInUp}
-              className="text-4xl font-bold text-gray-800 text-center mb-8"
-            >
-              Why Choose M. Zahir Properties?
-            </motion.h2>
-            <motion.p
-              {...fadeInUp}
-              className="text-gray-600 mb-18 w-4xl mx-auto text-center"
-            >
-              Discover the key reasons why clients choose us—from personalized
-              support to comprehensive selling solutions—all designed to make
-              your experience seamless and rewarding.
-            </motion.p>
+        <div className=" pt-32 pb-42 bg-gray-50">
+          <motion.h2
+            {...fadeInUp}
+            className="text-4xl font-bold text-gray-800 text-center mb-8"
+          >
+            Why Choose M. Zahir Properties?
+          </motion.h2>
+          <motion.p
+            {...fadeInUp}
+            className="text-gray-600 mb-18 w-4xl mx-auto text-center"
+          >
+            Discover the key reasons why clients choose us—from personalized
+            support to comprehensive selling solutions—all designed to make your
+            experience seamless and rewarding.
+          </motion.p>
 
-            <div className="space-y-32 w-[80%] mx-auto px-24">
-              <div className="flex flex-col md:flex-row items-center gap-16">
-                <div className="w-full md:w-1/2">
-                  <motion.img
-                    {...fadeInUp}
-                    src="/images/sell-property.jpg"
-                    alt="Proven Expertise"
-                    className="w-full h-120 object-cover rounded-lg"
-                  />
-                </div>
-                <div className="w-full md:w-1/2">
-                  <motion.h1
-                    {...fadeInUp}
-                    className="text-2xl font-semibold text-green-800 mb-6"
-                  >
-                    Proven Expertise
-                  </motion.h1>
-                  <div className="text-gray-600 space-y-8">
-                    <motion.p {...fadeInUp}>
-                      With over 15 years in the real estate industry, M. Zahir
-                      Properties has established itself as a trusted leader in
-                      Nairobi’s competitive market. Our team has successfully
-                      sold hundreds of properties, ranging from residential
-                      homes to commercial spaces, consistently achieving maximum
-                      value for our clients. This extensive experience is
-                      complemented by our deep knowledge of construction
-                      materials and finishes, which allows us to provide unique
-                      insights into property quality, potential renovations, and
-                      market positioning.
-                    </motion.p>
-                    <motion.p {...fadeInUp}>
-                      Our expertise extends beyond transactions—we understand
-                      the nuances of Nairobi’s neighborhoods, market trends, and
-                      buyer preferences. This enables us to craft tailored
-                      strategies that highlight your property’s strengths and
-                      attract the right buyers. Whether you’re selling a family
-                      home in Karen or an office space in Westlands, our proven
-                      track record ensures that your property stands out in a
-                      crowded market, delivering results you can rely on.
-                    </motion.p>
-                  </div>
+          <div className="space-y-32 w-[80%] mx-auto px-24">
+            <div className="flex flex-col md:flex-row items-center gap-16">
+              <div className="w-full md:w-1/2">
+                <motion.img
+                  {...fadeInUp}
+                  src="/images/sell-property.jpg"
+                  alt="Proven Expertise"
+                  className="w-full h-120 object-cover rounded-lg"
+                />
+              </div>
+              <div className="w-full md:w-1/2">
+                <motion.h1
+                  {...fadeInUp}
+                  className="text-2xl font-semibold text-green-800 mb-6"
+                >
+                  Proven Expertise
+                </motion.h1>
+                <div className="text-gray-600 space-y-8">
+                  <motion.p {...fadeInUp}>
+                    With over 15 years in the real estate industry, M. Zahir
+                    Properties has established itself as a trusted leader in
+                    Nairobi’s competitive market. Our team has successfully sold
+                    hundreds of properties, ranging from residential homes to
+                    commercial spaces, consistently achieving maximum value for
+                    our clients. This extensive experience is complemented by
+                    our deep knowledge of construction materials and finishes,
+                    which allows us to provide unique insights into property
+                    quality, potential renovations, and market positioning.
+                  </motion.p>
+                  <motion.p {...fadeInUp}>
+                    Our expertise extends beyond transactions—we understand the
+                    nuances of Nairobi’s neighborhoods, market trends, and buyer
+                    preferences. This enables us to craft tailored strategies
+                    that highlight your property’s strengths and attract the
+                    right buyers. Whether you’re selling a family home in Karen
+                    or an office space in Westlands, our proven track record
+                    ensures that your property stands out in a crowded market,
+                    delivering results you can rely on.
+                  </motion.p>
                 </div>
               </div>
+            </div>
 
-              <div className="flex flex-col md:flex-row-reverse items-center gap-16">
-                <div className="w-full md:w-1/2">
-                  <motion.img
-                    {...fadeInUp}
-                    src="/images/sell-property.jpg"
-                    alt="Ethical Practices"
-                    className="w-full h-120 object-cover rounded-lg"
-                  />
-                </div>
-                <div className="w-full md:w-1/2">
-                  <motion.h1
-                    {...fadeInUp}
-                    className="text-2xl font-semibold text-green-800 mb-6"
-                  >
-                    Ethical Practices
-                  </motion.h1>
-                  <div className="text-gray-600 space-y-4">
-                    <motion.p {...fadeInUp}>
-                      At M. Zahir Properties, we adhere to strict Islamic
-                      principles, ensuring that every transaction is conducted
-                      with transparency, fairness, and integrity. Our commitment
-                      to ethical practices means that we prioritize honesty in
-                      all dealings, providing clients with clear, accurate
-                      information about their property and the market. We avoid
-                      any form of misrepresentation or hidden fees, fostering
-                      trust and confidence in our services.
-                    </motion.p>
-                    <motion.p {...fadeInUp}>
-                      This ethical foundation extends to how we treat both
-                      buyers and sellers, ensuring that all parties benefit from
-                      a fair and balanced agreement. Our clients trust us to
-                      uphold these moral values while delivering exceptional
-                      results, whether they’re selling a small apartment or a
-                      luxury estate. By aligning our operations with these
-                      principles, we’ve built a reputation for reliability and
-                      respect, making us the go-to choice for those who value
-                      integrity in real estate.
-                    </motion.p>
-                  </div>
+            <div className="flex flex-col md:flex-row-reverse items-center gap-16">
+              <div className="w-full md:w-1/2">
+                <motion.img
+                  {...fadeInUp}
+                  src="/images/sell-property.jpg"
+                  alt="Ethical Practices"
+                  className="w-full h-120 object-cover rounded-lg"
+                />
+              </div>
+              <div className="w-full md:w-1/2">
+                <motion.h1
+                  {...fadeInUp}
+                  className="text-2xl font-semibold text-green-800 mb-6"
+                >
+                  Ethical Practices
+                </motion.h1>
+                <div className="text-gray-600 space-y-4">
+                  <motion.p {...fadeInUp}>
+                    At M. Zahir Properties, we adhere to strict Islamic
+                    principles, ensuring that every transaction is conducted
+                    with transparency, fairness, and integrity. Our commitment
+                    to ethical practices means that we prioritize honesty in all
+                    dealings, providing clients with clear, accurate information
+                    about their property and the market. We avoid any form of
+                    misrepresentation or hidden fees, fostering trust and
+                    confidence in our services.
+                  </motion.p>
+                  <motion.p {...fadeInUp}>
+                    This ethical foundation extends to how we treat both buyers
+                    and sellers, ensuring that all parties benefit from a fair
+                    and balanced agreement. Our clients trust us to uphold these
+                    moral values while delivering exceptional results, whether
+                    they’re selling a small apartment or a luxury estate. By
+                    aligning our operations with these principles, we’ve built a
+                    reputation for reliability and respect, making us the go-to
+                    choice for those who value integrity in real estate.
+                  </motion.p>
                 </div>
               </div>
+            </div>
 
-              <div className="flex flex-col md:flex-row items-center gap-16">
-                <div className="w-full md:w-1/2">
-                  <motion.img
-                    {...fadeInUp}
-                    src="/images/sell-property.jpg"
-                    alt="Personalized Service"
-                    className="w-full h-120 object-cover rounded-lg"
-                  />
-                </div>
-                <div className="w-full md:w-1/2">
-                  <motion.h1
-                    {...fadeInUp}
-                    className="text-2xl font-semibold text-green-800 mb-6"
-                  >
-                    Personalized Service
-                  </motion.h1>
-                  <div className="text-gray-600 space-y-4">
-                    <motion.p {...fadeInUp}>
-                      Our dedicated team at M. Zahir Properties is committed to
-                      providing personalized support tailored to your unique
-                      needs and goals. From the initial valuation to the final
-                      closing, we take the time to understand your priorities,
-                      whether you’re looking to sell quickly, maximize profit,
-                      or transition smoothly to your next property. We customize
-                      our approach to ensure that every aspect of the selling
-                      process aligns with your vision, offering guidance and
-                      advice at every step.
-                    </motion.p>
-                    <motion.p {...fadeInUp}>
-                      We pride ourselves on being accessible and responsive,
-                      keeping you informed with regular updates and addressing
-                      any concerns promptly. Our personalized service extends to
-                      handling the details—such as staging advice, buyer
-                      negotiations, and legal paperwork—so you can focus on your
-                      next chapter. With M. Zahir Properties, you’re not just
-                      another client; you’re a partner in a collaborative
-                      journey to achieve the best possible outcome for your
-                      property sale.
-                    </motion.p>
-                  </div>
+            <div className="flex flex-col md:flex-row items-center gap-16">
+              <div className="w-full md:w-1/2">
+                <motion.img
+                  {...fadeInUp}
+                  src="/images/sell-property.jpg"
+                  alt="Personalized Service"
+                  className="w-full h-120 object-cover rounded-lg"
+                />
+              </div>
+              <div className="w-full md:w-1/2">
+                <motion.h1
+                  {...fadeInUp}
+                  className="text-2xl font-semibold text-green-800 mb-6"
+                >
+                  Personalized Service
+                </motion.h1>
+                <div className="text-gray-600 space-y-4">
+                  <motion.p {...fadeInUp}>
+                    Our dedicated team at M. Zahir Properties is committed to
+                    providing personalized support tailored to your unique needs
+                    and goals. From the initial valuation to the final closing,
+                    we take the time to understand your priorities, whether
+                    you’re looking to sell quickly, maximize profit, or
+                    transition smoothly to your next property. We customize our
+                    approach to ensure that every aspect of the selling process
+                    aligns with your vision, offering guidance and advice at
+                    every step.
+                  </motion.p>
+                  <motion.p {...fadeInUp}>
+                    We pride ourselves on being accessible and responsive,
+                    keeping you informed with regular updates and addressing any
+                    concerns promptly. Our personalized service extends to
+                    handling the details—such as staging advice, buyer
+                    negotiations, and legal paperwork—so you can focus on your
+                    next chapter. With M. Zahir Properties, you’re not just
+                    another client; you’re a partner in a collaborative journey
+                    to achieve the best possible outcome for your property sale.
+                  </motion.p>
                 </div>
               </div>
             </div>

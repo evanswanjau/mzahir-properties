@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
+import { CircleCheck } from "lucide-react";
 import { CallToAction } from "@/components/sections/CallToAction";
 import FeaturedProperties from "@/components/sections/FeaturedProperties";
+import { FeaturedFAQs } from "@/components/sections/FeaturedFAQs";
 const services = [
   {
     id: 1,
@@ -77,7 +79,129 @@ const ServicesPage = () => {
             </div>
           </motion.div>
         </div>
+
+        {/* Enhanced Target Audience Section */}
+        <div className="bg-white pb-32">
+          <div className="max-w-[80%] mx-auto px-6 lg:px-8">
+            <motion.div
+              {...fadeInUp}
+              className="grid grid-cols-1 md:grid-cols-3 gap-10"
+            >
+              <motion.div
+                {...fadeInUp}
+                className="bg-linear-to-tl from-green-100 to-green-50 py-16 px-8 rounded-2xl"
+              >
+                <div className="flex flex-col items-center">
+                  <img
+                    src="/images/1.jpg"
+                    alt="First-Time Buyers"
+                    className="w-38 h-38 mb-6 rounded-full object-cover border-8 border-white"
+                  />
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-3">
+                    First-Time Buyers
+                  </h3>
+                  <p className="text-gray-600 mb-6 text-center">
+                    New to the market? We simplify the process and help you find
+                    your dream home.
+                  </p>
+                  <ul className="text-left text-gray-600 space-y-2 w-full pl-3">
+                    <li className="flex items-start">
+                      <CircleCheck className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
+                      <span>Step-by-step purchasing guidance</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CircleCheck className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
+                      <span>First-time buyer incentives</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CircleCheck className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
+                      <span>Financial planning assistance</span>
+                    </li>
+                  </ul>
+                </div>
+              </motion.div>
+
+              <motion.div
+                {...fadeInUp}
+                className="bg-linear-to-tl from-green-100 to-green-50 py-16 px-8 rounded-2xl"
+              >
+                <div className="flex flex-col items-center">
+                  <img
+                    src="/images/1.jpg"
+                    alt="First-Time Buyers"
+                    className="w-38 h-38 mb-6 rounded-full object-cover border-8 border-white"
+                  />
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-3">
+                    Real Estate Investors
+                  </h3>
+                  <p className="text-gray-600 mb-6 text-center">
+                    Maximize your ROI with expert guidance on high-value
+                    properties.
+                  </p>
+                  <ul className="text-left text-gray-600 space-y-2 w-full pl-5">
+                    <li className="flex items-start">
+                      <CircleCheck className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
+                      <span>Market analysis & trend reports</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CircleCheck className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
+                      <span>Portfolio diversification strategies</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CircleCheck className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
+                      <span>Tax advantage consultation</span>
+                    </li>
+                  </ul>
+                </div>
+              </motion.div>
+
+              <motion.div
+                {...fadeInUp}
+                className="bg-linear-to-tl from-green-100 to-green-50 py-16 px-8 rounded-2xl"
+              >
+                <div className="flex flex-col items-center">
+                  <img
+                    src="/images/1.jpg"
+                    alt="First-Time Buyers"
+                    className="w-38 h-38 mb-6 rounded-full object-cover border-8 border-white"
+                  />
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-3">
+                    Property Managers
+                  </h3>
+                  <p className="text-gray-600 mb-6 text-center">
+                    Comprehensive solutions for landlords and tenants alike.
+                  </p>
+                  <ul className="text-left text-gray-600 space-y-2 w-full pl-5">
+                    <li className="flex items-start">
+                      <CircleCheck className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
+                      <span>Tenant screening services</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CircleCheck className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
+                      <span>Lease agreement preparation</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CircleCheck className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
+                      <span>Maintenance coordination</span>
+                    </li>
+                  </ul>
+                </div>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+
         <div className="bg-gradient-to-b from-white to-gray-50 pb-24">
+          <motion.div {...fadeInUp} className="text-center mb-18">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Comprehensive Solutions for Every Client
+            </h2>
+            <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              With over 20 years of industry experience, we deliver tailored
+              real estate services to meet the unique needs of our diverse
+              clientele.
+            </p>
+          </motion.div>
           <div className="max-w-[80%] mx-auto px-6">
             <motion.div
               {...fadeInUp}
@@ -114,7 +238,9 @@ const ServicesPage = () => {
           </div>
         </div>
       </section>
+
       <FeaturedProperties />
+      <FeaturedFAQs />
       <CallToAction />
     </>
   );

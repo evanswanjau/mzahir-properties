@@ -6,6 +6,7 @@ import { Autoplay } from "swiper/modules";
 // @ts-ignore
 import "swiper/css";
 import { CallToAction } from "@/components/sections/CallToAction";
+import { motion } from "framer-motion";
 
 const AboutUs = () => {
   const testimonials = [
@@ -35,69 +36,129 @@ const AboutUs = () => {
     },
   ];
 
+  // Define animation variants
+  const fadeInUpBase = {
+    initial: { opacity: 0, y: 50 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true, amount: 0.3 },
+    transition: { duration: 0.6, ease: "easeOut" },
+  };
+
+  const fadeInUpDelayed = (delay: number) => ({
+    ...fadeInUpBase,
+    transition: { ...fadeInUpBase.transition, delay },
+  });
+
   return (
-    <>
-      <section className="py-24">
-        <div className="max-w-5xl mx-auto text-center px-6">
-          <img
-            src="images/4.jpg"
-            alt="M. Zahir Properties"
-            className="w-48 h-48 rounded-full object-cover mx-auto mb-8"
-          />
-          <h1 className="text-5xl font-bold text-gray-800 mb-6">
-            About M. Zahir Properties
-          </h1>
-          <p className="text-gray-600 leading-relaxed mb-6">
-            With over 15 years of experience in the hardware and paints
-            industry, I have developed a deep appreciation for the
-            transformation of a property—from its foundation to the final
-            touches. This expertise in construction materials and finishes
-            provides me with a unique perspective when assisting clients in
-            finding their ideal home.
-          </p>
-          <p className="text-gray-600 leading-relaxed">
-            At M. Zahir Properties, our mission is clear: to help you discover
-            your dream home. Whether you’re buying, selling, or investing, we
-            are dedicated to guiding you through the process with transparency,
-            professionalism, and a foundation in Islamic ethics.
-          </p>
+    <div className="bg-gray-50">
+      <div className="bg-white">
+        <div
+          style={{
+            backgroundImage: "url(" + "/images/white-background.png" + ")",
+            backgroundPosition: "center center",
+            backgroundSize: "80%",
+            backgroundRepeat: "no-repeat",
+          }}
+          className="w-[80%] mx-auto"
+        >
+          <motion.div {...fadeInUpBase} className="mb-12 py-12 bg-white/80">
+            <div className="w-4xl mx-auto text-center bg-white/90">
+              <motion.h1
+                {...fadeInUpBase}
+                className="text-6xl font-bold text-gray-800 text-center mb-8 leading-18"
+              >
+                Learn more <span className="text-green-700">About Us</span> and
+                our commitment to excellence.
+              </motion.h1>
+            </div>
+          </motion.div>
         </div>
-      </section>
+        <motion.section {...fadeInUpBase} className="pb-24">
+          <div className="max-w-5xl mx-auto text-center px-6">
+            <motion.img
+              {...fadeInUpBase}
+              src="images/5.jpg"
+              alt="M. Zahir Properties"
+              className="w-4xl h-80 object-cover object-bottom mx-auto mb-8 rounded-2xl"
+            />
+            <motion.p
+              {...fadeInUpBase}
+              className="text-gray-600 leading-relaxed mb-6"
+            >
+              With over 15 years of experience in the hardware and paints
+              industry, I have developed a deep appreciation for the
+              transformation of a property—from its foundation to the final
+              touches. This expertise in construction materials and finishes
+              provides me with a unique perspective when assisting clients in
+              finding their ideal home.
+            </motion.p>
+            <motion.p
+              {...fadeInUpBase}
+              className="text-gray-600 leading-relaxed"
+            >
+              At M. Zahir Properties, our mission is clear: to help you discover
+              your dream home. Whether you’re buying, selling, or investing, we
+              are dedicated to guiding you through the process with
+              transparency, professionalism, and a foundation in Islamic ethics.
+            </motion.p>
+          </div>
+        </motion.section>
+      </div>
+
       {/* Sell Your Property With Us Section */}
-      <section className="bg-gray-100 py-24">
+      <motion.section {...fadeInUpBase} className="bg-gray-50 py-24">
         <div className="max-w-[80%] mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center rounded-lg p-8">
-            <img
+          <motion.div
+            {...fadeInUpBase}
+            className="flex flex-col md:flex-row items-center rounded-lg p-8"
+          >
+            <motion.img
+              {...fadeInUpBase}
               src="/images/1.jpg"
               alt="Sell Your Property"
               className="w-full md:w-1/2 h-[600px] object-cover rounded-lg mb-8 md:mb-0 md:mr-16"
             />
-            <div className="w-full md:w-1/2">
-              <p className="text-green-700 mb-4 tracking-wider font-semibold">
+            <motion.div {...fadeInUpBase} className="w-full md:w-1/2">
+              <motion.p
+                {...fadeInUpDelayed(0.2)}
+                className="text-green-700 mb-4 tracking-wider font-semibold"
+              >
                 — DISCOVER NOW!
-              </p>
-              <h2 className="text-4xl font-semibold text-gray-800 mb-4">
+              </motion.p>
+              <motion.h2
+                {...fadeInUpDelayed(0.4)}
+                className="text-4xl font-semibold text-gray-800 mb-4"
+              >
                 Sell Your Property With Us
-              </h2>
-              <p className="text-gray-600 leading-relaxed mb-6">
+              </motion.h2>
+              <motion.p
+                {...fadeInUpDelayed(0.6)}
+                className="text-gray-600 leading-relaxed mb-6"
+              >
                 Ready to sell your property? We offer a streamlined,
                 professional process to maximize your property’s value while
                 ensuring a fair and ethical transaction. Let our expertise work
                 for you.
-              </p>
-              <p className="text-gray-600 leading-relaxed mb-6">
+              </motion.p>
+              <motion.p
+                {...fadeInUpDelayed(0.8)}
+                className="text-gray-600 leading-relaxed mb-6"
+              >
                 Our team of experienced professionals will guide you through
                 every step of the selling process, from initial consultation to
                 closing the deal. We use the latest marketing strategies to
                 showcase your property to potential buyers and negotiate the
                 best terms on your behalf.
-              </p>
-              <p className="text-gray-600  leading-relaxed mb-12">
+              </motion.p>
+              <motion.p
+                {...fadeInUpDelayed(1.0)}
+                className="text-gray-600 leading-relaxed mb-12"
+              >
                 Trust M. Zahir Properties to handle your sale with the utmost
                 care and dedication. Contact us today to get started and see how
                 we can help you achieve your real estate goals.
-              </p>
-              <a href="/sell-property">
+              </motion.p>
+              <motion.a {...fadeInUpDelayed(1.2)} href="/sell-property">
                 <div className="flex items-center space-x-6">
                   <Button
                     variant="default"
@@ -106,57 +167,69 @@ const AboutUs = () => {
                     View Properties
                   </Button>
                 </div>
-              </a>
-            </div>
-          </div>
+              </motion.a>
+            </motion.div>
+          </motion.div>
         </div>
-      </section>
-      <section className="bg-gray-50 py-24">
+      </motion.section>
+
+      <motion.section {...fadeInUpBase} className="bg-gray-50 py-24">
         <div className="max-w-[80%] mx-auto px-6">
-          <h2 className="text-4xl font-bold text-gray-800 text-center mb-5">
+          <motion.h2
+            {...fadeInUpBase}
+            className="text-4xl font-bold text-gray-800 text-center mb-5"
+          >
             Client Testimonials
-          </h2>
-          <p className="w-4xl mx-auto text-gray-600 leading-relaxed text-center mb-16">
+          </motion.h2>
+          <motion.p
+            {...fadeInUpBase}
+            className="w-4xl mx-auto text-gray-600 leading-relaxed text-center mb-16"
+          >
             Hear what our satisfied clients have to say about their experiences
             with M. Zahir Properties. We pride ourselves on delivering
             exceptional service and building lasting relationships.
-          </p>
-          <Swiper
-            modules={[Autoplay]}
-            spaceBetween={24}
-            slidesPerView={3}
-            slidesPerGroup={1}
-            loop={true}
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false,
-            }}
-          >
-            {testimonials.map((testimonial) => (
-              <SwiperSlide key={testimonial.name}>
-                <div className="bg-white rounded-lg p-6 h-full justify-center items-center flex flex-col space-y-4">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-24 h-24 rounded-full object-cover mr-4"
-                  />
-                  <p className="text-gray-800 text-lg font-semibold">
-                    {testimonial.name}
-                  </p>
-                  <p className="text-gray-600 leading-relaxed italic">
-                    "{testimonial.quote}"
-                  </p>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          </motion.p>
+          <motion.div {...fadeInUpBase}>
+            <Swiper
+              modules={[Autoplay]}
+              spaceBetween={24}
+              slidesPerView={3}
+              slidesPerGroup={1}
+              loop={true}
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+              }}
+            >
+              {testimonials.map((testimonial) => (
+                <SwiperSlide key={testimonial.name}>
+                  <motion.div
+                    {...fadeInUpBase}
+                    className="bg-white rounded-lg p-6 h-full justify-center items-center flex flex-col space-y-4"
+                  >
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      className="w-24 h-24 rounded-full object-cover mr-4"
+                    />
+                    <p className="text-gray-800 text-lg font-semibold">
+                      {testimonial.name}
+                    </p>
+                    <p className="text-gray-600 leading-relaxed italic">
+                      "{testimonial.quote}"
+                    </p>
+                  </motion.div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       <FeaturedFAQs />
       <FeaturedBlogs />
       <CallToAction />
-    </>
+    </div>
   );
 };
 
