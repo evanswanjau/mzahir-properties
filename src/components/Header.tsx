@@ -12,7 +12,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-white text-gray-800 p-4 flex justify-between items-center px-42 py-4">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black/40 p-4 flex justify-between items-center px-10 py-4 shadow-sm">
       <div className="flex items-center">
         <a href="/">
           <img
@@ -29,24 +29,22 @@ const Header = () => {
             <li key={link.name}>
               <a
                 href={link.href}
-                className="text-gray-600 hover:text-green-700 transition-colors duration-200"
+                className="text-white hover:text-green-700 transition-colors duration-200"
               >
                 {link.name}
               </a>
             </li>
           ))}
-          <li>
-            <a href="/contact-us">
-              <Button
-                variant="default"
-                className="cursor-pointer py-6 px-6 bg-green-700 text-white hover:bg-green-800 transition-colors duration-300"
-              >
-                Get in Touch
-              </Button>
-            </a>
-          </li>
         </ul>
       </nav>
+      <a href="/contact-us">
+        <Button
+          variant="default"
+          className="cursor-pointer py-6 px-6 bg-green-700 text-white hover:bg-green-800 transition-colors duration-300"
+        >
+          Get in Touch
+        </Button>
+      </a>
     </header>
   );
 };

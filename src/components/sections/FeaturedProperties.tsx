@@ -105,22 +105,21 @@ const FeaturedProperties = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center mb-8"
         >
-          <h2 className="text-4xl text-gray-800 font-bold">
-            Featured Property Listings
-          </h2>
+          <h2 className="text-4xl text-gray-800 font-bold">Developments</h2>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-center text-gray-600 mb-8 w-6/12 mx-auto"
+          className="text-center text-gray-500 mb-8 w-8/12 mx-auto"
         >
           <p>
-            Explore our handpicked selection of premium properties in Nairobi.
-            Whether you're looking for a modern apartment, a spacious villa, or
-            a cozy home, we have something for everyone. Browse through our
-            listings and find your dream property today.
+            Explore our handpicked selection of premium developments in Nairobi.
+            Whether you're looking for a high-rise residential complex, a gated
+            community, or a modern apartment building, we offer exceptional
+            investment opportunities. Browse through our developments and
+            discover your next property venture.
           </p>
         </motion.div>
         <motion.div
