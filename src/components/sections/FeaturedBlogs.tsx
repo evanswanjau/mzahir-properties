@@ -73,7 +73,7 @@ export const FeaturedBlogs = () => {
   ];
 
   return (
-    <section className="bg-gray-100 py-24">
+    <section className="bg-slate-950 py-24">
       <div className="max-w-[80%] mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -82,14 +82,14 @@ export const FeaturedBlogs = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center mb-5"
         >
-          <h2 className="text-4xl font-bold text-gray-800">Featured Blogs</h2>
+          <h2 className="text-4xl font-bold text-white">Featured Blogs</h2>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="w-4xl mx-auto text-gray-500 leading-relaxed text-center"
+          className="w-4xl mx-auto text-white leading-relaxed text-center"
         >
           <p>
             Explore expert advice, real estate trends, and practical tips to

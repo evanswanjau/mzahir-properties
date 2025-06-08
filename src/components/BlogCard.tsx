@@ -16,7 +16,7 @@ export const BlogCard = ({ post }: { post: BlogPost }) => {
       />
       <div className="flex flex-col flex-1 justify-between">
         <div>
-          <h3 className="text-xl font-semibold text-gray-800 mb-2 group-hover:text-green-600 transition-colors duration-500">
+          <h3 className="text-xl font-semibold text-gray-800 mb-2 group-hover:text-amber-500 transition-colors duration-500">
             {post.title}
           </h3>
           <p className="text-gray-500 mb-4">{post.excerpt}</p>

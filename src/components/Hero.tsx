@@ -2,42 +2,40 @@ import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   return (
-    <section
-      className="h-screen flex items-center justify-center bg-white py-12 px-4 relative overflow-hidden"
-      style={{
-        backgroundImage: "url('/images/hero_background.jpg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      <div className="absolute inset-0 bg-black/40" />
-      <div className="flex flex-col md:flex-row items-center max-w-[60%] w-full gap-12">
-        <div className="text-center mb-8 md:mb-0 z-20">
-          <p className="text-green-400 text-lg mb-4 tracking-wider font-semibold">
-            — DISCOVER NOW!
-          </p>
-          <h1 className="text-6xl md:text-[5em] font-bold text-white mb-6 leading-22 tracking-wide">
-            Instant Property Deals with MZahir
-          </h1>
-          <p className="text-lg md:text-xl text-white mb-8">
-            Whether you're looking for a cozy family home, a luxurious villa, or
-            a modern city apartment, we have something for everyone. Our
-            properties are carefully selected to meet the highest standards of
-            quality and comfort.
-          </p>
-          <div className="flex justify-center items-center space-x-6">
-            <Button
-              variant="default"
-              className="bg-green-700 border-green-700 cursor-pointer hover:bg-green-900 hover:border-green-900 text-white font-body text-lg px-8 py-7 rounded-lg transition-all duration-500"
-            >
-              View Properties
-            </Button>
-            <Button
-              variant="outline"
-              className="border-green-700 cursor-pointer text-green-700 hover:bg-green-700 hover:text-white font-body text-lg px-8 py-7 rounded-lg transition-all duration-300"
-            >
-              Get in touch
-            </Button>
+    <section className="h-[calc(100vh-70px)]  flex items-center justify-center bg-slate-900 p-16">
+      <div
+        className="w-full h-full bg-cover bg-center relative z-0"
+        style={{
+          backgroundImage: "url('/images/hero_background.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="absolute inset-0 bg-slate-900/60 z-10" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[70%] flex flex-col lg:flex-row items-center z-20">
+          <div className="max-w-2xl flex-1 text-center lg:text-left">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
+              Discover a place you'll love to live!
+            </h1>
+
+            <p className="text-lg lg:text-xl text-white mb-10 max-w-2xl leading-relaxed">
+              Find premium properties with M. Zahir Properties.
+            </p>
+
+            <div className="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-4">
+              <Button
+                variant="secondary"
+                className="bg-white hover:bg-amber-500 text-black hover:text-white cursor-pointer px-8 !py-6 tracking-widest"
+              >
+                VIEW PROPERTIES
+              </Button>
+              <Button
+                variant="secondary"
+                className="bg-amber-500 text-white hover:bg-white hover:text-black cursor-pointer px-8 !py-6 tracking-widest"
+              >
+                LEARN MORE
+              </Button>
+            </div>
           </div>
         </div>
       </div>

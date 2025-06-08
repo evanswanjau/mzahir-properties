@@ -4,7 +4,7 @@ import { Instagram, Twitter, Facebook } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white pt-24 pb-16">
+    <footer className="bg-gray-950 text-white pt-24 pb-16">
       <div className="max-w-[80%] mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
         <div>
           <a href="/">
@@ -31,7 +31,7 @@ const Footer = () => {
             <li>
               <a
                 href="/"
-                className="text-gray-200 hover:text-green-300 transition-colors"
+                className="text-gray-200 hover:text-amber-300 transition-colors"
               >
                 Home
               </a>
@@ -39,7 +39,7 @@ const Footer = () => {
             <li>
               <a
                 href="/about"
-                className="text-gray-400 hover:text-green-300 transition-colors"
+                className="text-gray-400 hover:text-amber-300 transition-colors"
               >
                 About
               </a>
@@ -47,7 +47,7 @@ const Footer = () => {
             <li>
               <a
                 href="/buy-property"
-                className="text-gray-400 hover:text-green-300 transition-colors"
+                className="text-gray-400 hover:text-amber-300 transition-colors"
               >
                 Buy Property
               </a>
@@ -55,7 +55,7 @@ const Footer = () => {
             <li>
               <a
                 href="/blog"
-                className="text-gray-400 hover:text-green-300 transition-colors"
+                className="text-gray-400 hover:text-amber-300 transition-colors"
               >
                 Blog
               </a>
@@ -63,7 +63,7 @@ const Footer = () => {
             <li>
               <a
                 href="/services"
-                className="text-gray-400 hover:text-green-300 transition-colors"
+                className="text-gray-400 hover:text-amber-300 transition-colors"
               >
                 Our Services
               </a>
@@ -71,7 +71,7 @@ const Footer = () => {
             <li>
               <a
                 href="/contact-us"
-                className="text-gray-400 hover:text-green-300 transition-colors"
+                className="text-gray-400 hover:text-amber-300 transition-colors"
               >
                 Contact Us
               </a>
@@ -88,7 +88,7 @@ const Footer = () => {
             <li>
               <a
                 href="#buy"
-                className="text-gray-400 hover:text-green-300 transition-colors"
+                className="text-gray-400 hover:text-amber-300 transition-colors"
               >
                 Property Buying Assistance
               </a>
@@ -96,7 +96,7 @@ const Footer = () => {
             <li>
               <a
                 href="#sell"
-                className="text-gray-400 hover:text-green-300 transition-colors"
+                className="text-gray-400 hover:text-amber-300 transition-colors"
               >
                 Property Selling Solutions
               </a>
@@ -104,7 +104,7 @@ const Footer = () => {
             <li>
               <a
                 href="#invest"
-                className="text-gray-400 hover:text-green-300 transition-colors"
+                className="text-gray-400 hover:text-amber-300 transition-colors"
               >
                 Investment Advisory
               </a>
@@ -112,7 +112,7 @@ const Footer = () => {
             <li>
               <a
                 href="#rent"
-                className="text-gray-400 hover:text-green-300 transition-colors"
+                className="text-gray-400 hover:text-amber-300 transition-colors"
               >
                 Rental Property Management
               </a>
@@ -137,7 +137,7 @@ const Footer = () => {
             />
             <Button
               variant="default"
-              className="bg-green-700 hover:bg-green-800 w-full sm:w-auto"
+              className="bg-amber-700 hover:bg-amber-800 w-full sm:w-auto"
             >
               Subscribe
             </Button>
@@ -147,7 +147,7 @@ const Footer = () => {
               href="https://instagram.com/mzahirproperties"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-green-300 transition-colors"
+              className="text-gray-400 hover:text-amber-300 transition-colors"
             >
               <Instagram className="w-6 h-6" />
             </a>
@@ -155,7 +155,7 @@ const Footer = () => {
               href="https://twitter.com/mzahirprops"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-green-300 transition-colors"
+              className="text-gray-400 hover:text-amber-300 transition-colors"
             >
               <Twitter className="w-6 h-6" />
             </a>
@@ -163,7 +163,7 @@ const Footer = () => {
               href="https://facebook.com/mzahirproperties"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-green-300 transition-colors"
+              className="text-gray-400 hover:text-amber-300 transition-colors"
             >
               <Facebook className="w-6 h-6" />
             </a>
@@ -174,11 +174,11 @@ const Footer = () => {
         <p>
           &copy; {new Date().getFullYear()} M. Zahir Properties. All rights
           reserved. |{" "}
-          <a href="#privacy" className="text-green-400 hover:text-green-300">
+          <a href="#privacy" className="text-amber-400 hover:text-amber-300">
             Privacy Policy
           </a>{" "}
           |{" "}
-          <a href="#terms" className="text-gray-400 hover:text-green-300">
+          <a href="#terms" className="text-gray-400 hover:text-amber-300">
             Terms of Service
           </a>
         </p>
