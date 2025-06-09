@@ -11,14 +11,14 @@ const Hero = () => {
           backgroundPosition: "center",
         }}
       >
-        <div className="absolute inset-0 bg-slate-900/60 z-10" />
+        <div className="absolute inset-0 bg-black/10 z-10" />
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[70%] flex flex-col lg:flex-row items-center z-20">
           <div className="max-w-2xl flex-1 text-center lg:text-left">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight [text-shadow:_2px_2px_4px_rgb(0_0_0_/_30%)]">
               Discover a place you'll love to live!
             </h1>
 
-            <p className="text-lg lg:text-xl text-white mb-10 max-w-2xl leading-relaxed">
+            <p className="text-lg lg:text-xl text-white mb-10 max-w-2xl leading-relaxed [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]">
               Find premium properties with M. Zahir Properties.
             </p>
 

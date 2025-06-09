@@ -95,7 +95,7 @@ const HomePage = () => {
               </motion.div>
               <motion.div
                 {...fadeInUpBase}
-                className="w-full lg:w-5/12 flex justify-endz-20"
+                className="w-full lg:w-5/12 flex justify-end z-20"
               >
                 <img
                   src="/images/potrait.jpg"
