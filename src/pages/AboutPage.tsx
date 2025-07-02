@@ -6,7 +6,7 @@ import { Autoplay } from "swiper/modules";
 // @ts-ignore
 import "swiper/css";
 import { CallToAction } from "@/components/sections/CallToAction";
-import { motion } from "framer-motion";
+import { motion, easeOut } from "framer-motion";
 
 const AboutUs = () => {
   const testimonials = [
@@ -25,13 +25,13 @@ const AboutUs = () => {
     {
       name: "Fatima Mwende",
       quote:
-        "Their knowledge of Nairobi’s real estate market is unmatched. I found my dream apartment in just two weeks!",
+        "Their knowledge of Nairobi's real estate market is unmatched. I found my dream apartment in just two weeks!",
       image: "/images/1.jpg",
     },
     {
       name: "Joseph Kiptoo",
       quote:
-        "The team’s dedication to fair dealings and personal attention made investing with them a rewarding experience.",
+        "The team's dedication to fair dealings and personal attention made investing with them a rewarding experience.",
       image: "/images/1.jpg",
     },
   ];
@@ -41,7 +41,7 @@ const AboutUs = () => {
     initial: { opacity: 0, y: 50 },
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true, amount: 0.3 },
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: { duration: 0.6, ease: easeOut },
   };
 
   const fadeInUpDelayed = (delay: number) => ({
@@ -97,7 +97,7 @@ const AboutUs = () => {
               className="text-gray-600 leading-relaxed"
             >
               At M. Zahir Properties, our mission is clear: to help you discover
-              your dream home. Whether you’re buying, selling, or investing, we
+              your dream home. Whether you're buying, selling, or investing, we
               are dedicated to guiding you through the process with
               transparency, professionalism, and a foundation in Islamic ethics.
             </motion.p>
@@ -136,7 +136,7 @@ const AboutUs = () => {
                 className="text-gray-600 leading-relaxed mb-6"
               >
                 Ready to sell your property? We offer a streamlined,
-                professional process to maximize your property’s value while
+                professional process to maximize your property's value while
                 ensuring a fair and ethical transaction. Let our expertise work
                 for you.
               </motion.p>

@@ -4,7 +4,7 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/accordion";
-import { motion } from "framer-motion";
+import { motion, easeOut } from "framer-motion";
 
 export const FeaturedFAQs = () => {
   const faqs = [
@@ -39,7 +39,7 @@ export const FeaturedFAQs = () => {
     initial: { opacity: 0, y: 50 },
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true, amount: 0.3 },
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: { duration: 0.6, ease: easeOut },
   };
 
   return (
@@ -55,7 +55,7 @@ export const FeaturedFAQs = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.6, ease: easeOut }}
           className="space-y-4"
         >
           <Accordion
@@ -70,7 +70,7 @@ export const FeaturedFAQs = () => {
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
+                transition={{ duration: 0.6, ease: easeOut }}
               >
                 {" "}
                 <AccordionItem

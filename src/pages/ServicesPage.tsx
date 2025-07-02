@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, easeOut } from "framer-motion";
 import { CircleCheck } from "lucide-react";
 import { CallToAction } from "@/components/sections/CallToAction";
 import FeaturedProperties from "@/components/sections/FeaturedProperties";
@@ -51,7 +51,7 @@ const ServicesPage = () => {
     initial: { opacity: 0, y: 50 },
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true, amount: 0.3 },
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: { duration: 0.6, ease: easeOut },
   };
 
   return (

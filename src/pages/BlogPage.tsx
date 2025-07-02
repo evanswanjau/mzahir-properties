@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { BlogCard } from "@/components/BlogCard";
 import { CallToAction } from "@/components/sections/CallToAction";
-import { motion } from "framer-motion";
+import { motion, easeOut } from "framer-motion";
 
 interface BlogPost {
   id: number;
@@ -25,7 +25,7 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: 2,
-    title: "Why Karen is Nairobi’s Hidden Gem",
+    title: "Why Karen is Nairobi's Hidden Gem",
     excerpt:
       "Discover why Karen remains one of the most sought-after neighborhoods in Nairobi for luxury living.",
     author: "Peter Kimani",
@@ -63,14 +63,14 @@ const blogPosts: BlogPost[] = [
     id: 6,
     title: "Investing in Kileleshwa: Is It Worth It?",
     excerpt:
-      "An analysis of Kileleshwa’s real estate market and why it’s attracting savvy investors.",
+      "An analysis of Kileleshwa's real estate market and why it's attracting savvy investors.",
     author: "David Mwangi",
     datePosted: "December 20, 2024",
     image: "/images/6.jpg",
   },
   {
     id: 7,
-    title: "The Benefits of Living Near Nairobi’s Waterfronts",
+    title: "The Benefits of Living Near Nairobi's Waterfronts",
     excerpt:
       "From scenic views to serene living, explore why waterfront properties are in high demand.",
     author: "Lucy Kamau",
@@ -90,7 +90,7 @@ const blogPosts: BlogPost[] = [
     id: 9,
     title: "Renovation Ideas to Boost Property Value",
     excerpt:
-      "Simple upgrades that can significantly increase your home’s market appeal.",
+      "Simple upgrades that can significantly increase your home's market appeal.",
     author: "Esther Njeri",
     datePosted: "November 10, 2024",
     image: "/images/3.jpg",
@@ -108,7 +108,7 @@ const blogPosts: BlogPost[] = [
     id: 11,
     title: "Understanding Property Taxes in Nairobi",
     excerpt:
-      "A beginner’s guide to navigating property taxes and avoiding common pitfalls.",
+      "A beginner's guide to navigating property taxes and avoiding common pitfalls.",
     author: "Grace Wambui",
     datePosted: "October 15, 2024",
     image: "/images/5.jpg",
@@ -117,7 +117,7 @@ const blogPosts: BlogPost[] = [
     id: 12,
     title: "Why Apartments Are Gaining Popularity in Nairobi",
     excerpt:
-      "The shift toward apartment living and what it means for the city’s real estate market.",
+      "The shift toward apartment living and what it means for the city's real estate market.",
     author: "Thomas Mburu",
     datePosted: "September 28, 2024",
     image: "/images/6.jpg",
@@ -135,8 +135,8 @@ const blogPosts: BlogPost[] = [
     id: 14,
     title: "The Impact of Infrastructure on Property Values",
     excerpt:
-      "How new roads and developments are driving up prices in Nairobi’s suburbs.",
-    author: "Paul Ndung’u",
+      "How new roads and developments are driving up prices in Nairobi's suburbs.",
+    author: "Paul Ndung'u",
     datePosted: "August 25, 2024",
     image: "/images/2.jpg",
   },
@@ -153,7 +153,7 @@ const blogPosts: BlogPost[] = [
     id: 16,
     title: "A Guide to Renting vs. Buying in Nairobi",
     excerpt:
-      "Weigh the pros and cons of renting versus buying in today’s market.",
+      "Weigh the pros and cons of renting versus buying in today's market.",
     author: "Samuel Kinyanjui",
     datePosted: "July 4, 2024",
     image: "/images/4.jpg",
@@ -181,7 +181,7 @@ const BlogPage = () => {
     initial: { opacity: 0, y: 50 },
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true, amount: 0.3 },
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: { duration: 0.6, ease: easeOut },
   };
 
   return (

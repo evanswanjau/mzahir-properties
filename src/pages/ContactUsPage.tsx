@@ -12,7 +12,7 @@ import {
   MapPin,
 } from "lucide-react";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
-import { motion } from "framer-motion";
+import { motion, easeOut } from "framer-motion";
 
 const ContactUs = () => {
   const handleSubmit = (e: React.FormEvent) => {
@@ -24,7 +24,7 @@ const ContactUs = () => {
     initial: { opacity: 0, y: 50 },
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true, amount: 0.3 },
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: { duration: 0.6, ease: easeOut },
   };
 
   return (
@@ -45,8 +45,8 @@ const ContactUs = () => {
                   {...fadeInUp}
                   className="text-6xl font-bold text-gray-800 text-center mb-8 leading-18"
                 >
-                  <span className="text-green-700">Get in Touch</span> with us today to start your{" "}
-                  real estate journey.
+                  <span className="text-green-700">Get in Touch</span> with us
+                  today to start your real estate journey.
                 </motion.h1>
               </div>
             </motion.div>
