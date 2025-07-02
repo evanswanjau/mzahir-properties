@@ -1,22 +1,35 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Mail, Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLinks = [
     { name: "HOME", href: "#" },
     { name: "ABOUT", href: "#" },
-    { name: "PROPERTIES", href: "#" },
+    { name: "LISTINGS", href: "#" },
     { name: "CONTACT", href: "#" },
   ];
 
   return (
-    <header className="bg-[#1C1C1C]">
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${
+        isScrolled ? "bg-black" : "bg-transparent"
+      }`}
+    >
       <div className="max-w-[95%] mx-auto px-6">
         <div className="flex justify-between items-center py-4">
-          <div className="flex items-center">
+          <div className="flex items-center space-x-6">
             <a href="/" className="flex items-center space-x-3 group">
               <div className="relative">
                 <img
@@ -31,32 +44,32 @@ const Header = () => {
                 />
               </div>
             </a>
+            <nav className="hidden lg:flex items-center space-x-8 ml-4">
+              <ul className="flex items-center space-x-8 font-playfair">
+                {navLinks.map((link) => (
+                  <li key={link.name}>
+                    <a
+                      href={link.href}
+                      className="text-white text-[15px] font-normal tracking-widest transition-colors duration-300 relative group hover:text-[#FF8800]"
+                    >
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </div>
-
-          <nav className="flex items-center space-x-6 lg:space-x-8">
-            <ul className="hidden lg:flex items-center space-x-12">
-              {navLinks.map((link, index) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className={`text-sm font-medium tracking-widest transition-colors duration-300 relative group ${
-                      index === 0
-                        ? "text-[#FF8800]"
-                        : "text-gray-300 hover:text-[#FF8800]"
-                    }`}
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-            <a href="/contact-us" className="hidden sm:flex">
-              <Button className="px-6 py-4 cursor-pointer border border-[#FF8800] hover:bg-[#FF8800] hover:text-white text-amber-500 tracking-widest">
+          <div className="hidden lg:flex items-center space-x-4">
+            <span className="font-playfair text-[15px] text-[#FF8800] bg-transparent px-4 py-2 border-none">
+              +254 722 587 400
+            </span>
+            <a href="/contact-us">
+              <Button className="px-6 py-4 cursor-pointer border border-[#FF8800] bg-transparent text-[#FF8800] hover:bg-[#FF8800] hover:text-white font-playfair text-[15px] tracking-widest">
                 <span>LET'S TALK</span>
                 <Mail size={18} />
               </Button>
             </a>
-          </nav>
+          </div>
           {/* Mobile Menu Button */}
           <button
             className="lg:hidden text-white hover:text-[#FF8800] transition-colors duration-300"
@@ -74,32 +87,32 @@ const Header = () => {
           } overflow-hidden`}
         >
           <nav className="py-4 border-t border-gray-700">
-            <ul className="space-y-4">
-              {navLinks.map((link, index) => (
+            <ul className="space-y-4 font-playfair">
+              {navLinks.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className={`block text-sm font-medium tracking-wide transition-colors duration-300 py-2 ${
-                      index === 0
-                        ? "text-[#FF8800]"
-                        : "text-white hover:text-[#FF8800]"
-                    }`}
+                    className="block text-white text-[15px] font-normal tracking-wide transition-colors duration-300 py-2 hover:text-[#FF8800]"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {link.name}
                   </a>
                 </li>
               ))}
-
-              {/* Mobile Email Link */}
+              {/* Mobile Phone & Email Link */}
               <li className="pt-2">
+                <span className="flex items-center space-x-2 text-[#FF8800] bg-transparent px-2 py-2 font-playfair text-[15px]">
+                  <span>+254 722 587 400</span>
+                </span>
+              </li>
+              <li>
                 <a
-                  href="mailto:contact@example.com"
-                  className="flex items-center space-x-2 text-[#FF8800] hover:text-white transition-colors duration-300 py-2"
+                  href="/contact-us"
+                  className="flex items-center space-x-2 text-[#FF8800] bg-transparent px-2 py-2 font-playfair text-[15px] border border-[#FF8800] hover:bg-[#FF8800] hover:text-white transition-colors duration-300"
                   onClick={() => setIsMenuOpen(false)}
                 >
+                  <span>LET'S TALK</span>
                   <Mail size={18} />
-                  <span className="text-sm font-medium">Email Us</span>
                 </a>
               </li>
             </ul>

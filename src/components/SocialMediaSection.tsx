@@ -1,10 +1,11 @@
 import { Instagram, Facebook } from "lucide-react";
+import { motion } from "framer-motion";
 
 const socialLinks = [
   {
     name: "Instagram",
     url: "https://instagram.com/",
-    icon: <Instagram className="w-10 h-10" color="#FF8800"  />,
+    icon: <Instagram className="w-10 h-10" color="#FF8800" />,
   },
   {
     name: "Facebook",
@@ -56,40 +57,78 @@ const posts = [
 ];
 
 const SocialMediaSection = () => (
-  <section className="bg-white py-24 px-8 lg:px-16">
+  <motion.section
+    className="bg-white py-24 px-8 lg:px-16"
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.3 }}
+    transition={{ duration: 1, ease: "easeOut" }}
+  >
     <div className="max-w-7xl mx-auto">
-      <div className="flex flex-col items-start mb-12">
+      <motion.div
+        className="flex flex-col items-start mb-12"
+        initial={{ opacity: 0, x: -40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 1, delay: 0.1, ease: "easeOut" }}
+      >
         <div className="flex items-center mb-6">
           <div className="w-2 h-20 bg-[#FF8800] mr-4" />
           <h2 className="text-4xl lg:text-6xl font-playfair font-bold text-black uppercase tracking-wide text-left">
             GET SOCIAL WITH US
           </h2>
         </div>
-        <div className="flex flex-row gap-8 mt-4 mb-8">
-          {socialLinks.map((link) => (
-            <a
+        <motion.div
+          className="flex flex-row gap-8 mt-4 mb-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.15,
+              },
+            },
+          }}
+        >
+          {socialLinks.map((link, i) => (
+            <motion.a
               key={link.name}
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
               aria-label={link.name}
               className="hover:scale-110 transition-transform duration-300"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: i * 0.15, ease: "easeOut" }}
             >
               {link.icon}
-            </a>
+            </motion.a>
           ))}
-        </div>
-      </div>
-      <div className="mb-8">
+        </motion.div>
+      </motion.div>
+      <motion.div
+        className="mb-8"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+      >
         <h3 className="text-xl font-bold text-left text-black mb-8 pl-2">
           Latest from Instagram
         </h3>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-0">
           {posts.map((post, idx) => (
-            <div
+            <motion.div
               key={idx}
               className="group cursor-pointer relative aspect-square overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform"
               style={{ borderRadius: 0 }}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: idx * 0.08, ease: "easeOut" }}
             >
               <div
                 className="w-full h-full bg-gradient-to-br from-pink-400 to-purple-600 bg-cover bg-center group-hover:scale-110 transition-transform duration-500"
@@ -124,11 +163,17 @@ const SocialMediaSection = () => (
                   {post.caption}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </div>
-      <div className="text-left pl-2">
+      </motion.div>
+      <motion.div
+        className="text-left pl-2"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+      >
         <p className="text-gray-600 text-lg mb-6">
           Follow us for daily property updates and real estate insights
         </p>
@@ -140,9 +185,9 @@ const SocialMediaSection = () => (
         >
           Follow @mzahirproperties
         </a>
-      </div>
+      </motion.div>
     </div>
-  </section>
+  </motion.section>
 );
 
 export default SocialMediaSection;

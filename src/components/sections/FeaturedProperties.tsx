@@ -52,7 +52,7 @@ const FeaturedProperties = () => {
     const scrollContainer = scrollRef.current;
     if (!scrollContainer) return;
 
-    const scrollSpeed = 0.8;
+    const scrollSpeed = 0.2;
     let animationId: number;
 
     const scroll = () => {
@@ -102,19 +102,21 @@ const FeaturedProperties = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 1.2, ease: "easeInOut" }}
           className="text-center mb-8"
         >
-          <h2 className="text-4xl text-gray-800 font-bold">Developments</h2>
+          <h2 className="text-4xl text-gray-800 font-playfair font-bold">
+            Developments
+          </h2>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 1.2, ease: "easeInOut" }}
           className="text-center text-gray-500 mb-8 w-8/12 mx-auto"
         >
-          <p>
+          <p className="font-lato">
             Explore our handpicked selection of premium developments in Nairobi.
             Whether you're looking for a high-rise residential complex, a gated
             community, or a modern apartment building, we offer exceptional
@@ -126,7 +128,7 @@ const FeaturedProperties = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 1.2, ease: "easeInOut" }}
           className="relative overflow-hidden"
         >
           <div
@@ -139,10 +141,10 @@ const FeaturedProperties = () => {
             {doubledProperties.map((property, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
+                transition={{ duration: 1.2, ease: "easeInOut" }}
               >
                 <PropertyListing
                   property={property}

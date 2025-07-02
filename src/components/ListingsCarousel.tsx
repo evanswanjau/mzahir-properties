@@ -1,5 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { motion } from "framer-motion";
 // @ts-ignore
 import "swiper/css";
 // @ts-ignore
@@ -100,9 +101,13 @@ const ListingsCarousel = () => (
             className="flex flex-col aspect-square"
             style={{ minWidth: 0, width: "100%", height: "100%" }}
           >
-            <div
+            <motion.div
               className="cursor-pointer group flex-1 w-full h-full aspect-square transition-all duration-300 border-2 border-transparent hover:border-[#FF8800]"
               style={{ transitionProperty: "border", borderRadius: 0 }}
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.7, delay: idx * 0.1, ease: "easeOut" }}
             >
               <div className="relative w-full h-full aspect-square overflow-hidden">
                 <img
@@ -129,7 +134,7 @@ const ListingsCarousel = () => (
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </SwiperSlide>
         ))}
       </Swiper>

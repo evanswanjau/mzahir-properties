@@ -47,27 +47,27 @@ const PropertyListing = ({
         </button>
       </div>
 
-      <h3 className="text-xl font-semibold mb-1">{property.title}</h3>
-      <p className="text-lg font-medium text-gray-800 mb-4">{property.price}</p>
-      <p className="text-gray-600 flex items-center gap-2 mb-3">
+      <h3 className="text-lg font-playfair font-semibold mb-1">{property.title}</h3>
+      <p className="text-base font-lato font-medium text-gray-800 mb-4">{property.price}</p>
+      <p className="text-gray-600 flex items-center gap-2 mb-3 font-lato">
         <Bed size={16} className="text-green-600" />
         {property.size}
       </p>
-      <p className="text-gray-600 flex items-center gap-2 mb-3">
+      <p className="text-gray-600 flex items-center gap-2 mb-3 font-lato">
         <MapPin size={16} className="text-green-600" />
         {property.location}
       </p>
-      <p className="text-gray-400 mb-4">{property.keyFeatures}</p>
+      <p className="text-gray-400 mb-4 font-lato">{property.keyFeatures}</p>
       <div className="flex gap-4">
         <Button
-          variant="default"
-          className="bg-green-700 border border-green-700 cursor-pointer hover:bg-green-900 hover:border-green-900 flex-1 text-white font-body py-5 rounded-sm transition-all duration-500"
+          variant="ghost"
+          className="border border-white bg-transparent text-white hover:bg-white hover:text-black font-playfair rounded-none flex-1 py-5 transition-all duration-500"
         >
           View Details
         </Button>
         <Button
           variant="outline"
-          className="border-green-700 cursor-pointer text-green-700 hover:bg-green-700 hover:text-white font-body rounded-sm py-5 transition-all duration-300 flex-1 shadow-none"
+          className="border-green-700 cursor-pointer text-green-700 hover:bg-green-700 hover:text-white font-lato rounded-none py-5 transition-all duration-300 flex-1 shadow-none"
         >
           Enquire Now
         </Button>

@@ -1,15 +1,29 @@
+import { motion } from "framer-motion";
+
 const ContactSection = () => (
   <section className="bg-black py-24 px-8 lg:px-16">
     <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
-      <div className="w-full lg:w-5/12 flex justify-center lg:justify-start mb-10 lg:mb-0">
+      <motion.div
+        className="w-full lg:w-5/12 flex justify-center lg:justify-start mb-10 lg:mb-0"
+        initial={{ opacity: 0, x: -40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+      >
         <img
           src="/images/potrait.jpg"
           alt="M. Zahir - Real Estate Professional"
           className="h-[520px] object-cover object-center grayscale select-none"
           style={{ filter: "grayscale(1)" }}
         />
-      </div>
-      <div className="w-full lg:w-7/12 flex flex-col items-start">
+      </motion.div>
+      <motion.div
+        className="w-full lg:w-7/12 flex flex-col items-start"
+        initial={{ opacity: 0, x: 40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+      >
         <h2 className="text-3xl lg:text-4xl font-playfair font-bold text-white mb-8 uppercase tracking-wide">
           We'd Love to Hear From You
         </h2>
@@ -68,7 +82,7 @@ const ContactSection = () => (
             Send Message
           </button>
         </form>
-      </div>
+      </motion.div>
     </div>
   </section>
 );
