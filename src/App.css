@@ -40,3 +40,27 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Swiper navigation arrows custom style */
+.swiper-button-next,
+.swiper-button-prev {
+  background: rgba(0, 0, 0, 0.7) !important;
+  color: #fff !important;
+  border-radius: 9999px !important;
+  width: 3rem !important;
+  height: 3rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+  opacity: 1 !important;
+  transition: background 0.3s;
+}
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 1.5rem !important;
+}
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: rgba(0, 0, 0, 0.9) !important;
+}

@@ -17,9 +17,12 @@ const AboutSection = () => (
           style={{ zIndex: 1 }}
         />
         <div className="relative z-10 pl-0 lg:pl-32">
-          <h2 className="text-4xl lg:text-5xl font-playfair font-bold text-white mb-6">
-            ABOUT US
-          </h2>
+          <div className="flex items-center mb-8 px-0">
+            <div className="w-2 h-20 bg-[#FF8800] mr-4" />
+            <h2 className="text-4xl md:text-5xl font-playfair font-bold text-white uppercase tracking-wide">
+              ABOUT US
+            </h2>
+          </div>
           <p className="text-lg text-gray-300 font-lato mb-8 max-w-2xl">
             With over 15 years of experience in the hardware and paints
             industry, I bring a unique perspective to real estate that goes
