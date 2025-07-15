@@ -10,54 +10,84 @@ import "swiper/css/pagination";
 
 const listings = [
   {
-    title: "3-Bedroom Apartment in Kileleshwa",
+    title: "Doha Twin Towers",
+    location: "Parklands",
     price: "Ksh 10M",
     image: "/images/1.jpg",
+    details: "3 BD | 2 BA | 1,750 SQFT",
+    status: "For Sale",
   },
   {
-    title: "4-Bedroom Villa in Karen Water Front",
+    title: "Greenwood Villas",
+    location: "Karen Water Front",
     price: "Ksh 15M",
     image: "/images/2.jpg",
+    details: "4 BD | 3 BA | 2,200 SQFT",
+    status: "For Sale",
   },
   {
-    title: "2-Bedroom Apartment in Westlands",
+    title: "Westlands Heights",
+    location: "Westlands",
     price: "Ksh 8.5M",
     image: "/images/3.jpg",
+    details: "2 BD | 2 BA | 1,200 SQFT",
+    status: "For Rent",
   },
   {
-    title: "3-Bedroom Apartment in Kileleshwa",
+    title: "Doha Twin Towers",
+    location: "Kileleshwa",
     price: "Ksh 10M",
     image: "/images/4.jpg",
+    details: "3 BD | 2 BA | 1,750 SQFT",
+    status: "For Sale",
   },
   {
-    title: "4-Bedroom Villa in Karen Water Front",
+    title: "Greenwood Villas",
+    location: "Karen Water Front",
     price: "Ksh 15M",
     image: "/images/5.jpg",
+    details: "4 BD | 3 BA | 2,200 SQFT",
+    status: "For Sale",
   },
   {
-    title: "2-Bedroom Apartment in Westlands",
+    title: "Westlands Heights",
+    location: "Westlands",
     price: "Ksh 8.5M",
     image: "/images/6.jpg",
+    details: "2 BD | 2 BA | 1,200 SQFT",
+    status: "For Rent",
   },
   {
-    title: "2-Bedroom Apartment in Westlands",
+    title: "Westlands Heights",
+    location: "Westlands",
     price: "Ksh 8.5M",
     image: "/images/about_m_background.jpg",
+    details: "2 BD | 2 BA | 1,200 SQFT",
+    status: "For Rent",
   },
   {
-    title: "3-Bedroom Apartment in Kileleshwa",
+    title: "Doha Twin Towers",
+    location: "Kileleshwa",
     price: "Ksh 10M",
     image: "/images/sell-property.jpg",
+    details: "3 BD | 2 BA | 1,750 SQFT",
+    status: "For Sale",
   },
   {
-    title: "4-Bedroom Villa in Karen Water Front",
+    title: "Greenwood Villas",
+    location: "Karen Water Front",
     price: "Ksh 15M",
     image: "/images/4.jpg",
+    details: "4 BD | 3 BA | 2,200 SQFT",
+    status: "For Sale",
   },
   {
-    title: "2-Bedroom Apartment in Westlands",
+    title: "Westlands Heights",
+    location: "Westlands",
     price: "Ksh 8.5M",
     image: "/images/1.jpg",
+    details: "2 BD | 2 BA | 1,200 SQFT",
+    status: "For Rent",
   },
 ];
 
@@ -124,7 +154,7 @@ const ListingsCarousel = () => (
               }}
             >
               <div
-                className="cursor-pointer group flex-1 w-full h-full aspect-square transition-all duration-300 border-2 border-transparent hover:border-[#FF8800]"
+                className="cursor-pointer group flex-1 w-full h-full aspect-square transition-all duration-300 border-2 border-transparent hover:border-[#FF8800] relative"
                 style={{
                   transitionProperty: "border",
                   borderRadius: 0,
@@ -137,7 +167,7 @@ const ListingsCarousel = () => (
                   style={{ width: "100%", height: "100%" }}
                 >
                   <img
-                    alt={listing.title}
+                    alt={`${listing.title} – ${listing.location}`}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     src={listing.image}
                     style={{
@@ -152,13 +182,47 @@ const ListingsCarousel = () => (
                     className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-all duration-300"
                     style={{ borderRadius: 0 }}
                   ></div>
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <h3 className="text-xl font-semibold font-playfair">
-                      {listing.title}
-                    </h3>
-                    <p className="text-lg font-bold text-orange-400">
-                      {listing.price}
-                    </p>
+                  {/* Bottom Left: Name & location, and details on hover */}
+                  <div className="absolute bottom-4 left-4 text-white flex items-start">
+                    {/* Orange vertical border spanning the full block */}
+                    <div
+                      className="h-full w-1 mr-3 rounded-none"
+                      style={{ background: "#FF8800", minHeight: "3.5em" }}
+                    />
+                    <div className="flex flex-col gap-1 justify-center">
+                      <h3 className="text-lg md:text-xl font-semibold font-playfair leading-tight">
+                        {listing.title}
+                      </h3>
+                      <div className="text-sm text-gray-200 font-normal leading-tight">
+                        {listing.location}
+                      </div>
+                      <div
+                        className="overflow-hidden"
+                        style={{ height: "1.5em" }}
+                      >
+                        <span
+                          className="block text-sm text-gray-200 font-medium translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500"
+                          style={{ willChange: "transform, opacity" }}
+                        >
+                          {listing.details}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Bottom Right: View Details button */}
+                  <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <button className="bg-white text-black font-semibold px-3 py-1 rounded-none shadow hover:bg-[#FF8800] hover:text-white transition-colors duration-300 text-xs">
+                      View Details
+                    </button>
+                  </div>
+                  {/* Top Left: Status badge */}
+                  <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <span
+                      className="text-white text-xs font-bold px-3 py-1 rounded-none shadow"
+                      style={{ background: "#FF8800" }}
+                    >
+                      {listing.status}
+                    </span>
                   </div>
                 </div>
               </div>
