@@ -154,7 +154,7 @@ const ListingsCarousel = () => (
               }}
             >
               <div
-                className="cursor-pointer group flex-1 w-full h-full aspect-square transition-all duration-300 border-2 border-transparent hover:border-[#FF8800] relative"
+                className="group flex-1 w-full h-full aspect-square transition-all duration-300 border-2 border-transparent hover:border-[#FF8800] relative"
                 style={{
                   transitionProperty: "border",
                   borderRadius: 0,
@@ -211,7 +211,7 @@ const ListingsCarousel = () => (
                   </div>
                   {/* Bottom Right: View Details button */}
                   <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <button className="bg-white text-black font-semibold px-3 py-1 rounded-none shadow hover:bg-[#FF8800] hover:text-white transition-colors duration-300 text-xs">
+                    <button className="cursor-pointer bg-white text-black font-semibold px-3 py-1 rounded-none shadow hover:bg-[#FF8800] hover:text-white transition-colors duration-300 text-xs">
                       View Details
                     </button>
                   </div>
