@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, Bed, MapPin } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 interface Property {
   title: string;
@@ -25,6 +26,7 @@ const PropertyListing = ({
   onNextImage,
   currentImageIndex,
 }: PropertyListingProps) => {
+  const navigate = useNavigate();
   return (
     <div className="min-w-[400px] bg-white p-4 rounded-xl transition-all duration-500 hover:shadow-2xl">
       <div className="relative h-56 mb-4 rounded-lg overflow-hidden">
@@ -62,6 +64,7 @@ const PropertyListing = ({
         <Button
           variant="ghost"
           className="border border-white bg-transparent text-white hover:bg-white hover:text-black font-playfair rounded-none flex-1 py-5 transition-all duration-500"
+          onClick={() => navigate(`/property/${index}`)}
         >
           View Details
         </Button>

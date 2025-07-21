@@ -9,6 +9,7 @@ import FAQsPage from "@/pages/FAQsPage";
 import SellPropertyPage from "@/pages/SellPropertyPage";
 import BuyPropertyPage from "@/pages/BuyPropertyPage";
 import ServicesPage from "@/pages/ServicesPage";
+import PropertyDetailsPage from "@/pages/PropertyDetailsPage";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/sell-property" element={<SellPropertyPage />} />
           <Route path="/buy-property" element={<BuyPropertyPage />} />
+          <Route path="/property/:id" element={<PropertyDetailsPage />} />
         </Routes>
         <Footer />
       </div>

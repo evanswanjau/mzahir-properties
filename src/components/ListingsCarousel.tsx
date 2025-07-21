@@ -211,9 +211,11 @@ const ListingsCarousel = () => (
                   </div>
                   {/* Bottom Right: View Details button */}
                   <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <button className="cursor-pointer bg-white text-black font-semibold px-3 py-1 rounded-none shadow hover:bg-[#FF8800] hover:text-white transition-colors duration-300 text-xs">
-                      View Details
-                    </button>
+                    <a href={`/property/1`}>
+                      <button className="cursor-pointer bg-white text-black font-semibold px-3 py-1 rounded-none shadow hover:bg-[#FF8800] hover:text-white transition-colors duration-300 text-xs">
+                        View Details
+                      </button>
+                    </a>
                   </div>
                   {/* Top Left: Status badge */}
                   <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
