@@ -16,45 +16,23 @@ import {
 const properties = [
   {
     id: 0,
-    title: "3-Bedroom Apartment in Kileleshwa",
+    title: "Doha Twin Towers",
     for: "For Sale",
-    price: "Ksh 10M",
-    location: "Kileleshwa, Nairobi",
-    bedrooms: 3,
-    bathrooms: 2,
-    sqft: 1800,
-    dsq: true,
-    description:
-      "A modern, spacious 3-bedroom apartment in the heart of Kileleshwa. Features a large balcony, modern kitchen, and secure neighborhood. Perfect for families seeking comfort and convenience.",
-    images: [
-      "/images/1.jpg",
-      "/images/2.jpg",
-      "/images/3.jpg",
-      "/images/4.jpg",
-      "/images/5.jpg",
-    ],
-  },
-  {
-    id: 1,
-    title: "4-Bedroom Villa in Karen Water Front",
-    for: "For Sale",
-    price: "Ksh 15M",
-    location: "Karen, Nairobi",
+    price: "USD 120,000",
+    location: "Parklands, Suswa Road",
     bedrooms: 4,
-    bathrooms: 3,
-    sqft: 2500,
+    bathrooms: 4,
+    sqft: 2300,
     dsq: true,
     description:
-      "A luxurious 4-bedroom villa with a private garden, large windows, premium finishing, and a stunning water front view. Ideal for those who value privacy and elegance.",
+      "Royal Rotana is a luxurious off-plan development project, located in the serene and affluent neighborhood of Parklands, Suswa Road. The development comprises of beautifully designed apartments featuring modern amenities, spacious layouts, and premium finishes. Each unit offers stunning views and comes with comprehensive security features.",
     images: [
-      "/images/4.jpg",
-      "/images/5.jpg",
-      "/images/6.jpg",
-      "/images/1.jpg",
-      "/images/2.jpg",
+      "/images/doha_twin_towers_image1.png",
+      "/images/doha_twin_towers_image2.png",
+      "/images/doha_twin_towers_image3.png",
+      "/images/doha_twin_towers_image4.png",
     ],
   },
-  // Add more properties as needed
 ];
 
 const amenitiesList = [
@@ -80,7 +58,7 @@ const PropertyDetailsPage = () => {
   const [mainImage, setMainImage] = useState(0);
   const [showModal, setShowModal] = useState(false);
 
-  // Smooth image transition for hero
+  // Smooth image transition for hero with enhanced animations
   useEffect(() => {
     setMainImage(heroIndex);
   }, [heroIndex]);
@@ -90,7 +68,7 @@ const PropertyDetailsPage = () => {
       <div className="max-w-2xl mx-auto py-24 text-center">
         <h2 className="text-2xl font-bold mb-4">Property not found</h2>
         <button
-          className="text-orange-700 underline"
+          className="text-[#FF8800] underline"
           onClick={() => navigate(-1)}
         >
           Go Back
@@ -99,7 +77,7 @@ const PropertyDetailsPage = () => {
     );
   }
 
-  // Hero image carousel navigation
+  // Hero image carousel navigation with smooth transitions
   const handlePrevHero = () => {
     setHeroIndex(
       (prev) => (prev - 1 + property.images.length) % property.images.length
@@ -121,7 +99,7 @@ const PropertyDetailsPage = () => {
 
   return (
     <div className="bg-black min-h-screen w-full">
-      {/* 1. Hero Section */}
+      {/* 1. Hero Section - Full-width with smooth transitions */}
       <div className="relative w-full h-[400px] md:h-[500px] overflow-hidden">
         <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-b from-black/70 to-transparent" />
         <img
@@ -147,20 +125,20 @@ const PropertyDetailsPage = () => {
             <span
               key={idx}
               className={`w-3 h-3 rounded-full ${
-                heroIndex === idx ? "bg-orange-500" : "bg-white/60"
+                heroIndex === idx ? "bg-[#FF8800] " : "bg-white/60"
               }`}
             />
           ))}
         </div>
       </div>
 
-      {/* 2. Property Summary Section */}
+      {/* 2. Property Summary Section - With DSQ information */}
       <div className="w-full px-0 py-0">
         <div className="flex flex-row bg-black text-white overflow-hidden min-h-[140px] w-full items-center">
           {/* Vertical FOR SALE label, bottom-to-top */}
           <div className="flex items-center justify-center px-0">
             <span
-              className="bg-orange-500 text-white font-bold text-xs md:text-sm py-6 px-2 tracking-widest uppercase"
+              className="bg-[#FF8800]  text-white font-bold text-xs md:text-sm py-6 px-2 tracking-widest uppercase"
               style={{
                 writingMode: "vertical-rl",
                 transform: "rotate(180deg)",
@@ -183,25 +161,25 @@ const PropertyDetailsPage = () => {
               {property.price}
             </div>
           </div>
-          {/* Property icons/details (horizontal row, right-aligned) */}
+          {/* Property icons/details including DSQ */}
           <div className="flex-1 flex items-center justify-end gap-12 pr-10">
-            <span className="flex items-center gap-2 text-orange-500">
+            <span className="flex items-center gap-2 text-[#FF8800] ">
               <Bed className="inline-block align-middle" size={28} />
               <span className="text-white text-lg">
                 {property.bedrooms} BED
               </span>
             </span>
-            <span className="flex items-center gap-2 text-orange-500">
+            <span className="flex items-center gap-2 text-[#FF8800] ">
               <Bath className="inline-block align-middle" size={28} />
               <span className="text-white text-lg">
                 {property.bathrooms} BATH
               </span>
             </span>
-            <span className="flex items-center gap-2 text-orange-500">
+            <span className="flex items-center gap-2 text-[#FF8800] ">
               <Ruler className="inline-block align-middle" size={28} />
               <span className="text-white text-lg">{property.sqft} SQFT</span>
             </span>
-            <span className="flex items-center gap-2 text-orange-500">
+            <span className="flex items-center gap-2 text-[#FF8800] ">
               <ShieldCheck className="inline-block align-middle" size={28} />
               <span className="text-white text-lg">
                 {property.dsq ? "DSQ" : "No DSQ"}
@@ -217,7 +195,7 @@ const PropertyDetailsPage = () => {
           <div className="max-w-3xl w-full flex flex-col items-center">
             {/* Title Block */}
             <div className="flex items-center gap-4 mb-6">
-              <div className="border-l-4 border-orange-500 h-12" />
+              <div className="border-l-4 border-[#FF8800]  h-12" />
               <div className="text-center">
                 <div className="uppercase text-lg font-semibold tracking-widest font-playfair">
                   {property.title}
@@ -231,13 +209,12 @@ const PropertyDetailsPage = () => {
             <p className="text-white text-base leading-relaxed font-lato mb-8 text-center">
               {property.description}
             </p>
-            {/* Bottom Border Removed */}
           </div>
         </div>
       </div>
 
-      {/* 4. Main Image Section (large, edge-to-edge) + 5. Additional Image Carousel */}
-      <div className="w-full p-6">
+      {/* 4. Main Image Section + 5. Additional Image Carousel */}
+      <div className="w-full mb-0">
         <div className="relative w-full h-[450px] md:h-[600px] overflow-hidden">
           <img
             src={property.images[mainImage]}
@@ -266,7 +243,7 @@ const PropertyDetailsPage = () => {
                 src={img}
                 alt={`Property thumbnail ${idx + 1}`}
                 className={`w-48 h-36 object-cover cursor-pointer border-2 transition-all duration-300 ${
-                  mainImage === idx ? "border-orange-700" : "border-transparent"
+                  mainImage === idx ? "border-[#FF8800]" : "border-transparent"
                 }`}
                 onClick={() => setMainImage(idx)}
               />
@@ -275,11 +252,123 @@ const PropertyDetailsPage = () => {
         </div>
       </div>
 
-      {/* 6. Amenities Section */}
+      {/* Video Section */}
+      <div className="w-full px-6 py-12 bg-black">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex items-center gap-4 mb-8">
+            <div className="border-l-4 border-[#FF8800] h-12" />
+            <div className="text-left">
+              <div className="uppercase text-lg font-semibold tracking-widest font-playfair text-white">
+                Property Video
+              </div>
+              <div className="uppercase text-sm text-gray-300 tracking-wider">
+                {property.title}
+              </div>
+            </div>
+          </div>
+          <div className="relative w-full aspect-video bg-gray-900 rounded-none overflow-hidden">
+            <video
+              className="w-full h-full object-cover"
+              controls
+              poster="/images/video-poster.jpg"
+            >
+              <source src="/videos/doha_video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+
+      {/* Brochure Download Section */}
+      <div className="w-full px-6 py-12 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex items-center gap-4 mb-8">
+            <div className="border-l-4 border-[#FF8800] h-12" />
+            <div className="text-left">
+              <div className="uppercase text-lg font-semibold tracking-widest font-playfair text-gray-800">
+                Property Brochure
+              </div>
+              <div className="uppercase text-sm text-gray-500 tracking-wider">
+                {property.title}
+              </div>
+            </div>
+          </div>
+          <div className="bg-gray-50 p-8 rounded-none border border-gray-200">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="flex-1">
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                  Download Property Brochure
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  Get detailed information about this property including
+                  specifications, amenities, and more in our comprehensive PDF
+                  brochure.
+                </p>
+                <div className="flex items-center gap-2 text-sm text-gray-500">
+                  <span>📄 PDF Document</span>
+                  <span>•</span>
+                  <span>2.5 MB</span>
+                </div>
+              </div>
+              <button
+                onClick={() => {
+                  // Create a temporary link to download the PDF
+                  const link = document.createElement("a");
+                  link.href = "/docs/property_brochure.pdf";
+                  link.download = `${property.title}-Brochure.pdf`;
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
+                className="px-8 py-3 cursor-pointer bg-[#FF8800] text-white font-bold uppercase tracking-wide transition-all duration-300 hover:bg-[#FF8800]/90 focus:outline-none rounded-none flex items-center gap-2"
+              >
+                Download Brochure
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Floor Plan Section */}
+      <div className="w-full px-6 py-12 bg-black">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex items-center gap-4 mb-8">
+            <div className="border-l-4 border-[#FF8800] h-12" />
+            <div className="text-left">
+              <div className="uppercase text-lg font-semibold tracking-widest font-playfair text-white">
+                Floor Plan
+              </div>
+              <div className="uppercase text-sm text-gray-300 tracking-wider">
+                {property.title}
+              </div>
+            </div>
+          </div>
+          <div className="relative w-full bg-gray-900 rounded-none overflow-hidden">
+            <img
+              src="/images/floor_plan.jpeg"
+              alt={`${property.title} Floor Plan`}
+              className="w-full h-auto object-contain"
+            />
+            <div className="absolute top-4 right-4">
+              <button
+                onClick={() => {
+                  // Open floor plan in new tab for full view
+                  window.open("/images/floor_plan.jpeg", "_blank");
+                }}
+                className="px-4 py-2 bg-black/70 text-white font-semibold uppercase tracking-wide transition-all duration-300 hover:bg-[#FF8800] focus:outline-none rounded-none text-sm"
+              >
+                View Full Size
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 6. Amenities Section - Clean grid layout */}
       <section className="p-6">
         <div className="w-full px-12 py-8 bg-white shadow mb-8">
           <div className="flex items-center gap-4 mb-6 max-w-2xl w-full mx-auto">
-            <div className="border-l-4 border-orange-500 h-12" />
+            <div className="border-l-4 border-[#FF8800]  h-12" />
             <div className="text-left">
               <div className="uppercase text-lg font-semibold tracking-widest font-playfair">
                 Amenities
@@ -292,7 +381,7 @@ const PropertyDetailsPage = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {amenitiesList.map(({ label, icon: Icon }, idx) => (
               <div key={idx} className="flex flex-col items-center gap-2">
-                <Icon size={32} className="text-orange-700" />
+                <Icon size={32} className="text-[#FF8800]" />
                 <span className="text-gray-700 font-lato text-base">
                   {label}
                 </span>
@@ -302,7 +391,7 @@ const PropertyDetailsPage = () => {
           {/* 7. Book a Showing Button */}
           <div className="flex justify-center mt-8">
             <button
-              className="px-8 py-3 bg-orange-700 text-white font-bold uppercase tracking-wide transition-all duration-300 hover:bg-orange-500 focus:outline-none rounded-none"
+              className="px-8 py-3 bg-[#FF8800] text-white font-bold uppercase tracking-wide transition-all duration-300 hover:bg-[#FF8800]  focus:outline-none rounded-none"
               onClick={() => setShowModal(true)}
             >
               Book a Showing
@@ -330,35 +419,36 @@ const PropertyDetailsPage = () => {
                 <input
                   type="text"
                   placeholder="First Name"
-                  className="flex-1 border-b border-gray-300 focus:border-orange-700 outline-none py-2 px-2 bg-transparent"
+                  className="flex-1 border-b border-gray-300 focus:border-[#FF8800] outline-none py-2 px-2 bg-transparent"
                 />
                 <input
                   type="text"
                   placeholder="Last Name"
-                  className="flex-1 border-b border-gray-300 focus:border-orange-700 outline-none py-2 px-2 bg-transparent"
+                  className="flex-1 border-b border-gray-300 focus:border-[#FF8800] outline-none py-2 px-2 bg-transparent"
                 />
               </div>
               <input
                 type="email"
                 placeholder="Email"
-                className="border-b border-gray-300 focus:border-orange-700 outline-none py-2 px-2 bg-transparent"
+                className="border-b border-gray-300 focus:border-[#FF8800] outline-none py-2 px-2 bg-transparent"
               />
               <input
                 type="tel"
                 placeholder="Phone"
-                className="border-b border-gray-300 focus:border-orange-700 outline-none py-2 px-2 bg-transparent"
+                className="border-b border-gray-300 focus:border-[#FF8800] outline-none py-2 px-2 bg-transparent"
               />
               <input
                 type="date"
-                className="border-b border-gray-300 focus:border-orange-700 outline-none py-2 px-2 bg-transparent"
+                placeholder="Preferred Viewing Date"
+                className="border-b border-gray-300 focus:border-[#FF8800] outline-none py-2 px-2 bg-transparent"
               />
               <textarea
                 placeholder="Message"
-                className="border-b border-gray-300 focus:border-orange-700 outline-none py-2 px-2 bg-transparent resize-none min-h-[60px]"
+                className="border-b border-gray-300 focus:border-[#FF8800] outline-none py-2 px-2 bg-transparent resize-none min-h-[60px]"
               />
               <button
                 type="submit"
-                className="mt-2 px-6 py-3 bg-orange-700 text-white font-bold uppercase tracking-wide transition-all duration-300 hover:bg-orange-500 focus:outline-none rounded-none"
+                className="mt-2 px-6 py-3 bg-[#FF8800] text-white font-bold uppercase tracking-wide transition-all duration-300 hover:bg-[#FF8800]  focus:outline-none rounded-none"
               >
                 Send
               </button>
@@ -366,7 +456,8 @@ const PropertyDetailsPage = () => {
           </div>
         </div>
       )}
-      {/* 8. Request More Info Section */}
+
+      {/* 8. Request More Info Section - Exact match to "We'd Love to Hear From You" */}
       <section className="relative bg-black py-24 px-8 lg:px-16 overflow-hidden">
         <div className="relative z-10 max-w-2xl mx-auto flex flex-col items-center">
           <h2 className="text-3xl font-playfair font-bold text-white mb-8 uppercase tracking-wide text-center">

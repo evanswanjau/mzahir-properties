@@ -13,8 +13,8 @@ const listings = [
     title: "Doha Twin Towers",
     location: "Parklands",
     price: "Ksh 10M",
-    image: "/images/1.jpg",
-    details: "3 BD | 2 BA | 1,750 SQFT",
+    image: "/images/doha_twin_towers_image1.png",
+    details: "3 BD | 4 BA | 1,750 SQFT",
     status: "For Sale",
   },
   {

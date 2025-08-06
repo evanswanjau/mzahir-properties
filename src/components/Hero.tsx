@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const properties = [
   {
     name: "Doha Twin Towers",
-    image: "/images/slider1.jpg",
+    image: "/images/doha_twin_towers_image1.png",
   },
   {
     name: "Urban Sky",
