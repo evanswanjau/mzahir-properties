@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
 import { Mail, Menu, X } from "lucide-react";
 
 const Header = () => {
@@ -16,9 +15,9 @@ const Header = () => {
 
   const navLinks = [
     { name: "HOME", href: "/" },
-    { name: "ABOUT", href: "#" },
+    { name: "ABOUT", href: "/about" },
     { name: "LISTINGS", href: "#" },
-    { name: "CONTACT", href: "#" },
+    { name: "CONTACT", href: "/contact" },
   ];
 
   return (
@@ -28,7 +27,7 @@ const Header = () => {
       }`}
     >
       <div className="max-w-[95%] mx-auto px-6">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex items-center justify-between py-4">
           <div className="flex items-center space-x-6">
             <a href="/" className="flex items-center space-x-3 group">
               <div className="relative">
@@ -60,21 +59,20 @@ const Header = () => {
             </nav>
           </div>
           <div className="hidden lg:flex items-center space-x-4">
-            <span className="font-playfair text-[15px] text-[#FF8800] bg-transparent px-4 py-2 border-none">
+            <span className="text-[#FF8800] font-playfair text-[15px]">
               +254 722 587 400
             </span>
-            <a href="/contact-us">
-              <Button className="px-6 py-4 cursor-pointer border border-[#FF8800] bg-transparent text-[#FF8800] hover:bg-[#FF8800] hover:text-white font-playfair text-[15px] tracking-widest">
-                <span>LET'S TALK</span>
-                <Mail size={18} />
-              </Button>
+            <a
+              href="/contact"
+              className="flex items-center space-x-2 text-[#FF8800] bg-transparent px-4 py-2 font-playfair text-[15px] border border-[#FF8800] hover:bg-[#FF8800] hover:text-white transition-colors duration-300"
+            >
+              <span>LET'S TALK</span>
+              <Mail size={18} />
             </a>
           </div>
-          {/* Mobile Menu Button */}
           <button
-            className="lg:hidden text-white hover:text-[#FF8800] transition-colors duration-300"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
+            className="lg:hidden text-white p-2"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -93,7 +91,6 @@ const Header = () => {
                   <a
                     href={link.href}
                     className="block text-white text-[15px] font-normal tracking-wide transition-colors duration-300 py-2 hover:text-[#FF8800]"
-                    onClick={() => setIsMenuOpen(false)}
                   >
                     {link.name}
                   </a>
@@ -107,7 +104,7 @@ const Header = () => {
               </li>
               <li>
                 <a
-                  href="/contact-us"
+                  href="/contact"
                   className="flex items-center space-x-2 text-[#FF8800] bg-transparent px-2 py-2 font-playfair text-[15px] border border-[#FF8800] hover:bg-[#FF8800] hover:text-white transition-colors duration-300"
                   onClick={() => setIsMenuOpen(false)}
                 >
